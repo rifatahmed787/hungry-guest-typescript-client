@@ -25,7 +25,6 @@ const ToggleButton = () => {
         <Icon
           icon={darkMode ? "ph:moon" : "ph:sun"}
           width="20px"
-          size={50}
           className={`text-brand text-${darkMode ? "yellow" : "gray"}-500`}
         />
       </div>

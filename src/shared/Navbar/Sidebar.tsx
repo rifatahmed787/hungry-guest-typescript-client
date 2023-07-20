@@ -10,7 +10,7 @@ import ToggleButton from "../../components/ToggleButton/ToggleButton";
 
 const SideBar = () => {
   const [IsSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode, isBangla, toggoleBangla } = useContext(DarkModeContext);
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   //for sidebar open and close
   const handleSidebarOpen = () => setIsSidebarOpen(!IsSidebarOpen);
@@ -88,10 +88,28 @@ const SideBar = () => {
               </p>
               <ToggleButton />
 
+              {/* Language change button  */}
+
+              <label className="flex items-center cursor-pointer justify-center mt-5 hover:bg-inherit">
+                <div className="relative">
+                  <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={darkMode}
+                    onChange={toggoleBangla}
+                  />
+                  <h1 className="text-lg text-primary font-display font-semibold">
+                    {isBangla ? "বাংলা" : "English"}
+                  </h1>
+                </div>
+              </label>
+
               <div className="flex justify-center">
                 <div className="flex justify-center items-center gap-2 absolute bottom-10 text-brand hover:text-primary">
                   <Icon icon="memory:logout" width={30} />
-                  <h1 className="text-2xl font-semibold">Logout</h1>
+                  <h1 className="text-xl font-semibold cursor-pointer">
+                    {isBangla ? "লগআউট" : "Logout"}
+                  </h1>
                 </div>
               </div>
             </div>
