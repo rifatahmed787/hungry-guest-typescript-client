@@ -93,7 +93,7 @@ const Navbar = () => {
   //sub menu for blog
   const toggleBloggridDropdown = () =>
     setBloggridDropdownOpen(!bloggridDropdownOpen);
-  const bloggridDropdownClose = () => toggleBloggridDropdown(false);
+  const bloggridDropdownClose = () => setBloggridDropdownOpen(false);
 
   const menuItems = (
     <>

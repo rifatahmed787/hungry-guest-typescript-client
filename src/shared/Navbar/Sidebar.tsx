@@ -15,7 +15,10 @@ const SideBar = () => {
   //for sidebar open and close
   const handleSidebarOpen = () => setIsSidebarOpen(!IsSidebarOpen);
   const handleClick = () => {
-    document.getElementById("hamburger-1").classList.toggle("is-active");
+    const hamburger = document.getElementById("hamburger-1");
+    if (hamburger) {
+      hamburger.classList.toggle("is-active");
+    }
   };
 
   //navbar color change effect

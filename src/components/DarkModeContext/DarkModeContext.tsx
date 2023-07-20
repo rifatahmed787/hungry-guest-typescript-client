@@ -1,8 +1,16 @@
-import { useState, useEffect, createContext } from "react";
+/* eslint-disable @typescript-eslint/no-empty-function */
+import { useState, useEffect, createContext, ReactNode } from "react";
 
-export const DarkModeContext = createContext();
+export const DarkModeContext = createContext({
+  darkMode: false,
+  toggleDarkMode: () => {},
+});
 
-export const DarkModeProvider = ({ children }) => {
+type DarkModeProviderProps = {
+  children: ReactNode;
+};
+
+export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {

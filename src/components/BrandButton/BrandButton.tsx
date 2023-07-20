@@ -1,4 +1,9 @@
-const BrandButton = ({ text }) => {
+import { ReactNode } from "react";
+
+type BrandButton = {
+  text: ReactNode;
+};
+const BrandButton = ({ text }: BrandButton) => {
   return (
     <>
       <button

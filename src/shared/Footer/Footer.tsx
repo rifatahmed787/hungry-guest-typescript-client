@@ -7,7 +7,7 @@ const Footer = () => {
     return new Date().getFullYear();
   };
   return (
-    <footer className="max-w-screen-2xl mx-auto relative before:absolute before:content-normal before:w-full before:h-1 before:bg-primary before:top-0 ">
+    <footer className="max-w-screen-2xl mt-32 mx-auto relative before:absolute before:content-normal before:w-full before:h-1 before:bg-primary before:top-0 ">
       <div className="bg-gradient-backdrop pt-10 pb-1 px-5 ">
         <div className=" grid grid-cols-1 md:grid-cols-3 ">
           <div className="mb-10 w-11/12">
