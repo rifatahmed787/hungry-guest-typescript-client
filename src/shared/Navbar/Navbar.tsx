@@ -21,7 +21,7 @@ const Navbar = () => {
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
   const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode, isBangla } = useContext(DarkModeContext);
 
   // sub next menu state
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -112,7 +112,7 @@ const Navbar = () => {
           className="flex group cursor-pointer items-center py-4 "
           onClick={() => setHomeDropdownOpen(false)}
         >
-          <span>Home</span>
+          <span>{isBangla ? "হোম" : "Home"}</span>
           <Icon
             icon="material-symbols:arrow-drop-down-rounded"
             className="group-hover:translate-y-1 duration-300"
@@ -147,7 +147,7 @@ const Navbar = () => {
                 to="/"
                 className="block text-lg text-brand hover:text-primary hover:translate-x-1 duration-300 text-center mb-3"
               >
-                Home1
+                {isBangla ? "হোম" : "Home"}
               </Link>
               <img src={home1} alt="" className="w-full h-96" />
             </div>
@@ -169,7 +169,9 @@ const Navbar = () => {
           className="flex group cursor-pointer items-center py-4"
           onClick={togglePagesDropdown}
         >
-          <span onClick={() => setPagesDropdownOpen(false)}>Pages</span>
+          <span onClick={() => setPagesDropdownOpen(false)}>
+            {isBangla ? "পৃষ্ঠা" : "Pages"}
+          </span>
           <Icon
             icon="material-symbols:arrow-drop-down-rounded"
             className="group-hover:translate-y-1 duration-300"
@@ -187,7 +189,7 @@ const Navbar = () => {
                 className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                 onClick={() => setPagesDropdownOpen(false)}
               >
-                Landing Page
+                {isBangla ? "অবতরন পৃষ্ঠা" : "Landing Page"}
               </Link>
             </li>
 
@@ -199,7 +201,7 @@ const Navbar = () => {
                 className="block pl-4 pr-24 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                 onClick={() => setPagesDropdownOpen(false)}
               >
-                About us
+                {isBangla ? "আমাদের সম্পর্কে" : " About us"}
               </Link>
             </li>
 
@@ -211,7 +213,7 @@ const Navbar = () => {
                 className="block pl-4 pr-24 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                 onClick={() => setPagesDropdownOpen(false)}
               >
-                Our Team
+                {isBangla ? "মেম্বার" : "Our Team"}
               </Link>
             </li>
 
@@ -226,7 +228,7 @@ const Navbar = () => {
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setServicesDropdownOpen(false)}
                 >
-                  Our Services
+                  {isBangla ? "সেবাসমূহ" : "Our Services"}
                 </span>
                 <Icon
                   icon="ic:round-play-arrow"
@@ -246,7 +248,7 @@ const Navbar = () => {
                       to="/singleservice"
                       className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Single Service
+                      {isBangla ? "একটিসেবা" : "Single Service"}
                     </Link>
                   </li>
                   <li>
@@ -255,7 +257,7 @@ const Navbar = () => {
                       to="/servicelist"
                       className="block px-10 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Service List
+                      {isBangla ? "সেবা তালিকা" : "Service List"}
                     </Link>
                   </li>
                   <li>
@@ -264,7 +266,7 @@ const Navbar = () => {
                       to="/servicegrid"
                       className="block px-10 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Service Grid
+                      {isBangla ? "সেবাগ্রিড" : "Service Grid"}
                     </Link>
                   </li>
                 </ul>
@@ -282,7 +284,7 @@ const Navbar = () => {
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setShopDropdownOpen(false)}
                 >
-                  Shop
+                  {isBangla ? "দোকান" : "Shop"}
                 </span>
                 <Icon
                   icon="ic:round-play-arrow"
