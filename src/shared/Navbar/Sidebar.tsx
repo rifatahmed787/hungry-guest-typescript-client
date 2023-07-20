@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import ToggleButton from "../../../Components/ToggleButton/ToggleButton";
+
 import { useContext } from "react";
-import { DarkModeContext } from "../../../Components/DarkMoodContext/DarkMoodContext";
+
 import { Icon } from "@iconify/react";
 import "./Navbar.css";
+import { DarkModeContext } from "../../components/DarkModeContext/DarkModeContext";
+import ToggleButton from "../../components/ToggleButton/ToggleButton";
 
 const SideBar = () => {
   const [IsSidebarOpen, setIsSidebarOpen] = useState(false);

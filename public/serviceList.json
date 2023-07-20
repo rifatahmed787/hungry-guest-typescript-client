@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "name": "Fizza",
+    "description": "Delicious food, yummy flavour",
+    "price": 25.99,
+    "image_url": "https://img.freepik.com/free-photo/mix-pizza-chicken-tomato-bell-pepper-olives-mushroom-side-view_141793-3167.jpg?w=740&t=st=1685947865~exp=1685948465~hmac=a520760aeec92e3a2bf7a4607aabdf78b814bb6b4203e5e214dc441a2f095dc8",
+    "category_id": "snacks"
+  },
+  {
+    "id": 2,
+    "name": "Burger",
+    "description": "Delicious food, yummy flavour",
+    "price": 25.99,
+    "image_url": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "snacks"
+  },
+  {
+    "id": 3,
+    "name": "Fizza",
+    "description": "Delicious food, yummy flavour",
+    "price": 25.99,
+    "image_url": "https://img.freepik.com/free-photo/mix-pizza-chicken-tomato-                       bell-pepper-olives-mushroom-side-view_141793-3167.jpg?                            w=740&t=st=1685947865~exp=1685948465~hmac=a520760aeec92e3a2bf7a4607aabdf78b814bb6b4203e5e214dc441a2f095dc8",
+    "category_id": "snacks"
+  },
+  {
+    "id": 4,
+    "name": "Burger",
+    "description": "Delicious food, yummy flavour",
+    "price": 25.99,
+    "image_url": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "snacks"
+  },
+  {
+    "id": 5,
+    "name": "Buiskit",
+    "description": "A gift card to use at our store",
+    "price": 50,
+    "image_url": "https://img.freepik.com/free-photo/english-breakfast-fried-eggs-sausages-zucchini-sweet-peppers_2829-19852.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "breakfast"
+  },
+  {
+    "id": 6,
+    "name": "Ruti",
+    "description": "A selection of delicious gourmet cheeses",
+    "price": 39.99,
+    "image_url": "https://img.freepik.com/free-photo/breakfast-composition_23-2147788605.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "breakfast"
+  },
+  {
+    "id": 7,
+    "name": "Buiskit",
+    "description": "A set of handmade artisanal soaps",
+    "price": 22.99,
+    "image_url": "https://img.freepik.com/free-photo/set-salad-fried-eggs-pastry-delicious-breakfast-table-white-background-high-angle-view_176474-3834.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "breakfast"
+  },
+  {
+    "id": 8,
+    "name": "Ruti",
+    "description": "A beautiful crystal vase",
+    "price": 89.99,
+    "image_url": "https://img.freepik.com/free-photo/breakfast-valentine-s-day-fried-eggs-bread-shape-heart-fresh-vegetables_114579-85492.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "breakfast"
+  },
+  {
+    "id": 9,
+    "name": "Coffee",
+    "description": "A luxury scented candle",
+    "price": 29.99,
+    "image_url": "https://img.freepik.com/free-vector/white-cup-hot-coffee-with-cinnamon-saucer-beans-wooden-table-realistic_1284-56783.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "coffee"
+  },
+  {
+    "id": 10,
+    "name": "Gourmet Coffee",
+    "description": "A bag of delicious gourmet coffee beans",
+    "price": 16.99,
+    "image_url": "https://img.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_1286-70.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "coffee"
+  },
+  {
+    "id": 11,
+    "name": "Coffee",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/beautiful-fresh-relax-morning-coffee-cup-set_1150-7052.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "coffee"
+  },
+  {
+    "id": 12,
+    "name": "Coffee",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-vector/cups-cappuccino-coffee-composition_1284-24507.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "coffee"
+  },
+  {
+    "id": 13,
+    "name": "Cold Drinks",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/colorful-soda-drinks-macro-shot_53876-42346.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "drinks"
+  },
+  {
+    "id": 14,
+    "name": "Cold Drinks",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/variety-fruit-juices-black-background_23-2148227516.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "drinks"
+  },
+  {
+    "id": 15,
+    "name": "Cold Drinks",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/sparkly-drink-with-ice-garnished-with-lemon-mint_140725-6813.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.2.540227284.1678439152&semt=locales",
+    "category_id": "drinks"
+  },
+  {
+    "id": 16,
+    "name": "Cold Drinks",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/mint-blue-orange-drinks-sliced-citrus-white-flowers_23-2148145378.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "drinks"
+  },
+  {
+    "id": 17,
+    "name": "Beef",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/dinner-table-with-national-sac-ichi-dishes_114579-3185.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "dinner"
+  },
+  {
+    "id": 18,
+    "name": "Fish",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/banquet-table-with-snacks_144627-18361.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "dinner"
+  },
+  {
+    "id": 19,
+    "name": "Chicken",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/christmas-table-served-with-turkey-decorated-with-bright-tinsel-candles_2829-18814.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "dinner"
+  },
+  {
+    "id": 20,
+    "name": "Beef",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/various-meal-glass-wine_141793-3276.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "dinner"
+  },
+  {
+    "id": 21,
+    "name": "Beef",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/various-meal-glass-wine_141793-3276.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "lunch"
+  },
+  {
+    "id": 22,
+    "name": "Beef",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/various-meal-glass-wine_141793-3276.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "lunch"
+  },
+  {
+    "id": 23,
+    "name": "Beef",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/various-meal-glass-wine_141793-3276.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "lunch"
+  },
+  {
+    "id": 24,
+    "name": "Beef",
+    "description": "A high-quality leather wallet",
+    "price": 49.99,
+    "image_url": "https://img.freepik.com/free-photo/various-meal-glass-wine_141793-3276.jpg?size=626&ext=jpg&uid=R33905010&ga=GA1.1.540227284.1678439152&semt=locales",
+    "category_id": "lunch"
+  }
+]
