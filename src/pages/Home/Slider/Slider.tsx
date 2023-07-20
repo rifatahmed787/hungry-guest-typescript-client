@@ -16,19 +16,51 @@ import "./Slider.css";
 
 // import required modules
 
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { Icon } from "@iconify/react/dist/iconify.js";
+
+type Swiper = {
+  swiper: Swiper | null;
+
+  slidePrev: () => void;
+  slideNext: () => void;
+};
+
+type SwiperRef = {
+  swiper?: Swiper;
+};
 
 const Slider = () => {
   const { darkMode } = useContext(DarkModeContext);
+  const swiperRef = useRef<SwiperRef>(null); // Use a single useRef for Swiper instance
+
+  // Function to slide to the previous slide
+  const goPrevButton = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  // Function to slide to the next slide
+  const goNextButton = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
   return (
     <>
       <Swiper
         spaceBetween={30}
         loop={true}
         effect={"fade"}
-        navigation={true}
+        ref={swiperRef}
+        navigation={{
+          prevEl: ".prev-button-1",
+          nextEl: ".next-button-1",
+        }}
         // pagination={{
         //   clickable: true,
         // }}
@@ -69,6 +101,14 @@ const Slider = () => {
           />
         </SwiperSlide>
       </Swiper>
+      <div className="flex justify-center items-center gap-3 pt-12 text-center">
+        <button className="prev-button-1" onClick={() => goPrevButton()}>
+          <Icon icon="ic:baseline-less-than" width={25} />
+        </button>
+        <button className="next-button-1" onClick={() => goNextButton()}>
+          <Icon icon="ic:baseline-greater-than" width={25} />
+        </button>
+      </div>
     </>
   );
 };
