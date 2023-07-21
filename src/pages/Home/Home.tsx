@@ -1,3 +1,4 @@
+import Contact from "./Contact/Contact";
 import Restaurant from "./Restaurant/Restaurant";
 import ServiceCard from "./SampleServiceCard/ServiceCard";
 import ServiceSlider from "./ServiceSlider/ServiceSlider";
@@ -18,6 +19,7 @@ const Home = () => {
       <Shef />
       <ShefSlider />
       <Testimonial />
+      <Contact />
     </>
   );
 };

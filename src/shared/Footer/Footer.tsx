@@ -145,8 +145,10 @@ const Footer = () => {
               <form action="#">
                 <input
                   type="text"
-                  placeholder="Email Address"
-                  className="px-7 py-4 w-full bottom-0 focus:border-none"
+                  placeholder="Type your email..."
+                  // value={searchText}
+                  // onChange={(e) => setSearchText(e.target.value)}
+                  className="border border-gray-300 rounded-md px-4 py-2 pr-12 md:py-5 md:pr-72 lg:py-5 lg:pr-72  focus:outline-none  focus:border-none relative"
                 />
                 <button className="absolute top-0 right-0 bg-primary py-5 px-10">
                   <Icon

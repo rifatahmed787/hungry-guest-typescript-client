@@ -75,7 +75,7 @@ const ShefSlider = () => {
         className="mySwiper bg-fixed bg-cover bg-center pt-16 pl-16 "
       >
         <SwiperSlide>
-          <div className="w-4/5 group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+          <div className="w-4/5 group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-3/4 after:h-1.5 after:bottom-0">
             <div className=" h-fit group ">
               <div className="relative overflow-hidden ">
                 <img className="h-96 w-full  " src={card1} alt="" />
@@ -115,7 +115,7 @@ const ShefSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-4/5  group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+          <div className="w-4/5  group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-3/4 after:h-1.5 after:bottom-0">
             <div className="h-fit group ">
               <div className="relative overflow-hidden ">
                 <img className="h-96 w-full  " src={card2} alt="" />
@@ -155,7 +155,7 @@ const ShefSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-4/5  group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+          <div className="w-4/5  group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-3/4 after:h-1.5 after:bottom-0">
             <div className="h-fit group ">
               <div className="relative overflow-hidden ">
                 <img className="h-96 w-full  " src={card1} alt="" />
@@ -195,7 +195,7 @@ const ShefSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-4/5 group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+          <div className="w-4/5 group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-3/4 after:h-1.5 after:bottom-0">
             <div className=" h-fit group ">
               <div className="relative overflow-hidden ">
                 <img className="h-96 w-full  " src={card1} alt="" />

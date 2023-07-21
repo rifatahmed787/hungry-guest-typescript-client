@@ -9,7 +9,7 @@ const Shef = () => {
           <h1 className=" text-left text-3xl lg:text-5xl text-brand font-bold">
             Meet Our Best Chef
           </h1>
-          <p className="text-primary text-lg font-semibold text-left  my-5">
+          <p className="text-gray-600 text-lg font-semibold text-left  my-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
             voluptatibus, omnis inventore mollitia quas qui, ab numquam quis
             corrupti atque consectetur ad minus nostrum tenetur optio in rem
@@ -70,7 +70,7 @@ const Shef = () => {
             </ul>
           </div>
         </div>
-        <div className="relative before:absolute before:content-normal before:bg-primary before:w-4/6 before:h-1.5 before:bottom-0">
+        <div className="relative before:absolute before:content-normal before:bg-primary before:w-4/6 before:h-1.5 before:bottom-0 before:z-10">
           <img src={chef} alt="" className="" />
           <span className="inset-0 absolute bg-gradient-to-b from-yellow-400 to-green-400 top-0 left-0 opacity-40 hover:opacity-0 duration-300"></span>
         </div>
