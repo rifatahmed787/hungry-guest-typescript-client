@@ -6,12 +6,12 @@ import { Icon } from "@iconify/react";
 import "./Navbar.css";
 
 import homeMegaImg from "../../assets/SliderImage/slider.jpg";
-import home1 from "../../assets/screenshoot/home1 (1).png";
 
 import { DarkModeContext } from "../../components/DarkModeContext/DarkModeContext";
 import SideBar from "./Sidebar";
 import BrandButton_2 from "../../components/BrandButton/BrandButton_2";
 import BrandButton from "../../components/BrandButton/BrandButton";
+import HomeMenuItem from "./HomeMenuItem/HomeMenuItem";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,7 +101,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary  text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
         onMouseEnter={toggleHomeDropdown}
@@ -122,11 +126,15 @@ const Navbar = () => {
 
         {homeDropdownOpen && (
           <ul
-            className="dropdown-menu grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-items-center w-11/12 lg:w-3/4 absolute lg:left-[12%] bg-white z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll"
+            className={`dropdown-menu md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll ${
+              darkMode
+                ? "bg-gradient-backdrop text-white"
+                : "bg-white text-primary"
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             {/* home mega image  */}
-            <div>
+            <div className="col-span-2">
               <img src={homeMegaImg} alt="" />
               <h1 className="text-3xl text-center py-5  font-display-Poppins text-primary">
                 Delicious Food Ideas
@@ -140,16 +148,8 @@ const Navbar = () => {
                 <BrandButton_2 text="Purchase Now" />
               </p>
             </div>
-            <div>
-              {/* home1 and home2 link. It will not be here  */}
-              <Link
-                title="Home1"
-                to="/"
-                className="block text-lg text-brand hover:text-primary hover:translate-x-1 duration-300 text-center mb-3"
-              >
-                {isBangla ? "হোম" : "Home"}
-              </Link>
-              <img src={home1} alt="" className="w-full h-96" />
+            <div className="col-span-4 pt-7 px-3">
+              <HomeMenuItem />
             </div>
           </ul>
         )}
@@ -159,7 +159,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary  text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
         onMouseEnter={togglePagesDropdown}
@@ -180,13 +184,21 @@ const Navbar = () => {
         </div>
 
         {pagesDropdownOpen && (
-          <ul className="dropdown-menu  py-4 absolute  bg-white block z-50 duration-300 ease-in-out divide-y-2">
+          <ul
+            className={`dropdown-menu  py-4 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
+              darkMode ? "bg-gradient-backdrop" : "bg-white"
+            }`}
+          >
             {/* Landing pages  */}
             <li onClick={() => setIsMenuOpen(false)}>
               <Link
                 title="Landing Page"
                 to="/landing"
-                className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
                 onClick={() => setPagesDropdownOpen(false)}
               >
                 {isBangla ? "অবতরন পৃষ্ঠা" : "Landing Page"}
@@ -198,7 +210,11 @@ const Navbar = () => {
               <Link
                 title="about us"
                 to="/about"
-                className="block pl-4 pr-24 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
                 onClick={() => setPagesDropdownOpen(false)}
               >
                 {isBangla ? "আমাদের সম্পর্কে" : " About us"}
@@ -210,7 +226,11 @@ const Navbar = () => {
               <Link
                 title="Our Team"
                 to="/team"
-                className="block pl-4 pr-24 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
                 onClick={() => setPagesDropdownOpen(false)}
               >
                 {isBangla ? "মেম্বার" : "Our Team"}
@@ -223,7 +243,13 @@ const Navbar = () => {
               onMouseLeave={servicesDropdownClose}
               onClick={toggleServicesDropdown}
             >
-              <div className="flex  justify-between items-center pl-4  py-2 text-lg text-brand hover:text-primary cursor-pointer group">
+              <div
+                className={`flex  justify-between items-center pl-4  py-2 text-lg  cursor-pointer group ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
+              >
                 <span
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setServicesDropdownOpen(false)}
@@ -239,14 +265,20 @@ const Navbar = () => {
 
               {servicesDropdownOpen && (
                 <ul
-                  className="dropdown-menu  py-4 absolute -right-28  lg:-right-44  bg-white z-50 shadow-lg duration-300 ease-in-out divide-y-2"
+                  className={`dropdown-menu  py-4 absolute -right-28  lg:-right-44  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
+                    darkMode ? "bg-gradient-backdrop" : "bg-white "
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <li>
                     <Link
                       title="single service"
                       to="/singleservice"
-                      className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "একটিসেবা" : "Single Service"}
                     </Link>
@@ -255,7 +287,11 @@ const Navbar = () => {
                     <Link
                       title="service list"
                       to="/servicelist"
-                      className="block px-10 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "সেবা তালিকা" : "Service List"}
                     </Link>
@@ -264,7 +300,11 @@ const Navbar = () => {
                     <Link
                       title="service grid"
                       to="/servicegrid"
-                      className="block px-10 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "সেবাগ্রিড" : "Service Grid"}
                     </Link>
@@ -279,7 +319,13 @@ const Navbar = () => {
               onMouseLeave={shopDropdownClose}
               onClick={toggleShopDropdown}
             >
-              <div className="flex  justify-between items-center pl-4  py-2 text-lg text-brand hover:text-primary cursor-pointer group">
+              <div
+                className={`flex  justify-between items-center pl-4  py-2 text-lg cursor-pointer group ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary "
+                }`}
+              >
                 <span
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setShopDropdownOpen(false)}
@@ -295,14 +341,20 @@ const Navbar = () => {
 
               {shopDropdownOpen && (
                 <ul
-                  className="dropdown-menu  py-4 absolute -right-28 lg:-right-44 bg-white z-50 shadow-lg duration-300 ease-in-out divide-y-2"
+                  className={`dropdown-menu  py-4 absolute -right-28 lg:-right-44  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
+                    darkMode ? "bg-gradient-backdrop" : "bg-white"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <li>
                     <Link
                       title="Cart Page"
                       to="/cartpage"
-                      className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "কার্ড পৃষ্ঠা" : "Cart Page"}
                     </Link>
@@ -311,7 +363,11 @@ const Navbar = () => {
                     <Link
                       title="Checkout Page"
                       to="/checkout"
-                      className="block px-10 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "চেকআউট পৃষ্ঠা" : "Checkout Page"}
                     </Link>
@@ -320,7 +376,11 @@ const Navbar = () => {
                     <Link
                       title="My Account"
                       to="/myaccount"
-                      className="block px-10 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "আমার অ্যাকাউন্ট" : "My Account"}
                     </Link>
@@ -334,7 +394,11 @@ const Navbar = () => {
               <Link
                 title="FAQ"
                 to="/faq"
-                className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 py-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
               >
                 {isBangla ? "প্রশ্ন জিজ্ঞাসা" : "FAQs"}
               </Link>
@@ -347,7 +411,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary  text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
         onMouseEnter={toggleMenuDropdown}
@@ -368,13 +436,21 @@ const Navbar = () => {
         </div>
 
         {menuDropdownOpen && (
-          <ul className="dropdown-menu  py-4 absolute  bg-white block z-50 duration-300 ease-in-out divide-y-2">
+          <ul
+            className={`dropdown-menu  py-4 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
+              darkMode ? "bg-gradient-backdrop" : "bg-white"
+            }`}
+          >
             <li>
               <Link
                 onClick={() => setIsMenuOpen(false)}
                 title="Reservation"
                 to="/reservation"
-                className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
               >
                 {isBangla ? "সংরক্ষণ" : " Reservations"}
               </Link>
@@ -386,7 +462,13 @@ const Navbar = () => {
               onMouseLeave={submenuDropdownClose}
               onClick={toggleSubmenuDropdown}
             >
-              <div className="flex  justify-between items-center pl-4  py-2 text-lg text-brand hover:text-primary cursor-pointer group">
+              <div
+                className={`flex  justify-between items-center pl-4  py-2 text-lg  cursor-pointer group ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
+              >
                 <span
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setSubmenuDropdownOpen(false)}
@@ -402,14 +484,20 @@ const Navbar = () => {
 
               {submenuDropdownOpen && (
                 <ul
-                  className="dropdown-menu  py-4 absolute -right-20 lg:-right-36 bg-white z-50 shadow-lg duration-300 ease-in-out divide-y-2"
+                  className={`dropdown-menu  py-4 absolute -right-20 lg:-right-36  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
+                    darkMode ? "bg-gradient-backdrop" : "bg-white"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <li>
                     <Link
                       title="Menu Tab"
                       to="/menutab"
-                      className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "তালিকা ট্যাব" : " Menu Tab"}
                     </Link>
@@ -418,7 +506,11 @@ const Navbar = () => {
                     <Link
                       title="Menus List"
                       to="/menulist"
-                      className="block px-10 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "মেনু তালিকা" : "Menus List"}
                     </Link>
@@ -427,7 +519,11 @@ const Navbar = () => {
                     <Link
                       title="Menus"
                       to="/menus"
-                      className="block px-10 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "তালিকাগুলো" : "Menus"}
                     </Link>
@@ -441,7 +537,11 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 title="Reservations Form"
                 to="/reservationsform"
-                className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 py-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
               >
                 {isBangla ? "সংরক্ষন ফর্ম" : " Reservations Form"}
               </Link>
@@ -454,7 +554,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary  text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
         onMouseEnter={toggleBlogDropdown}
@@ -475,13 +579,21 @@ const Navbar = () => {
         </div>
 
         {blogDropdownOpen && (
-          <ul className="dropdown-menu  py-4 absolute  bg-white block z-50 duration-300 ease-in-out divide-y-2">
+          <ul
+            className={`dropdown-menu  py-4 absolute block z-50 duration-300 ease-in-out divide-y-2 ${
+              darkMode ? "bg-gradient-backdrop" : "bg-white"
+            }`}
+          >
             <li>
               <Link
                 onClick={() => setIsMenuOpen(false)}
                 title="Blog List"
                 to="/bloglist"
-                className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
               >
                 {isBangla ? "ব্লগ তালিকা" : "Blog List"}
               </Link>
@@ -493,7 +605,13 @@ const Navbar = () => {
               onMouseLeave={bloggridDropdownClose}
               onClick={toggleBloggridDropdown}
             >
-              <div className="flex  justify-between items-center pl-4  py-2 text-lg text-brand hover:text-primary cursor-pointer group">
+              <div
+                className={`flex  justify-between items-center pl-4  py-2 text-lg  cursor-pointer group ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
+              >
                 <span
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setBloggridDropdownOpen(false)}
@@ -509,14 +627,20 @@ const Navbar = () => {
 
               {bloggridDropdownOpen && (
                 <ul
-                  className="dropdown-menu  py-4 absolute -right-32 lg:-right-56  bg-white z-50 shadow-lg duration-300 ease-in-out divide-y-2"
+                  className={`dropdown-menu  py-4 absolute -right-32 lg:-right-56   z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
+                    darkMode ? "bg-gradient-backdrop" : "bg-white"
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <li>
                     <Link
                       title="Blog grid"
                       to="/bloggrid"
-                      className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                      className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                        darkMode
+                          ? "text-white hover:text-primary"
+                          : "text-brand hover:text-primary"
+                      }`}
                     >
                       {isBangla ? "ব্লগ গ্রিড চার কলাম" : "Blog grid 4 columns"}
                     </Link>
@@ -530,7 +654,11 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 title="Blog Single"
                 to="/blogsingle"
-                className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 py-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
               >
                 {isBangla ? "ব্লগ একক পৃষ্ঠা" : "Blog Single Page"}
               </Link>
@@ -540,7 +668,11 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 title="Blog overlay"
                 to="/blogoverlay"
-                className="block pl-4 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
+                className={`block pl-4 pt-2 text-lg  hover:translate-x-1 duration-300 ${
+                  darkMode
+                    ? "text-white hover:text-primary"
+                    : "text-brand hover:text-primary"
+                }`}
               >
                 {isBangla ? "ব্লগ গ্রিড ওভারলে" : "Blog Grid Overlay"}
               </Link>
@@ -553,7 +685,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary  text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
         onMouseEnter={toggleContactDropdown}
@@ -572,7 +708,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
       >
@@ -616,7 +756,11 @@ const Navbar = () => {
       <li
         className={`font-bold ${
           scrolled
-            ? "hover:text-primary  text-brand"
+            ? `${
+                darkMode
+                  ? "text-white hover:text-brand"
+                  : "hover:text-primary  text-brand"
+              }`
             : "text-regular hover:text-primary"
         }`}
         onClick={() => setIsMenuOpen(false)}
