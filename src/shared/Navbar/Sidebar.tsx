@@ -81,7 +81,7 @@ const SideBar = () => {
                 className="w-24 h-24 rounded-full mx-auto"
               />
               <h1 className="text-2xl text-primary text-center font-semibold mt-3">
-                Leonel Messi
+                {isBangla ? "লিওনেল মেসি" : "Leonel Messi"}
               </h1>
               <p className="text-base text-brand text-center font-display1">
                 messigoat@gmail.com

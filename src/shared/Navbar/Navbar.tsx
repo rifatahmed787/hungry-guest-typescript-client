@@ -304,7 +304,7 @@ const Navbar = () => {
                       to="/cartpage"
                       className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Cart Page
+                      {isBangla ? "কার্ড পৃষ্ঠা" : "Cart Page"}
                     </Link>
                   </li>
                   <li>
@@ -313,7 +313,7 @@ const Navbar = () => {
                       to="/checkout"
                       className="block px-10 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Checkout Page
+                      {isBangla ? "চেকআউট পৃষ্ঠা" : "Checkout Page"}
                     </Link>
                   </li>
                   <li>
@@ -322,7 +322,7 @@ const Navbar = () => {
                       to="/myaccount"
                       className="block px-10 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      My Account
+                      {isBangla ? "আমার অ্যাকাউন্ট" : "My Account"}
                     </Link>
                   </li>
                 </ul>
@@ -336,7 +336,7 @@ const Navbar = () => {
                 to="/faq"
                 className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
               >
-                FAQs
+                {isBangla ? "প্রশ্ন জিজ্ঞাসা" : "FAQs"}
               </Link>
             </li>
           </ul>
@@ -357,7 +357,9 @@ const Navbar = () => {
           className="flex group cursor-pointer items-center py-4"
           onClick={toggleMenuDropdown}
         >
-          <span onClick={() => setMenuDropdownOpen(false)}>Menu</span>
+          <span onClick={() => setMenuDropdownOpen(false)}>
+            {isBangla ? "তালিকা" : "Menu"}
+          </span>
           <Icon
             icon="material-symbols:arrow-drop-down-rounded"
             className="group-hover:translate-y-1 duration-300"
@@ -374,7 +376,7 @@ const Navbar = () => {
                 to="/reservation"
                 className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
               >
-                Reservations
+                {isBangla ? "সংরক্ষণ" : " Reservations"}
               </Link>
             </li>
 
@@ -389,7 +391,7 @@ const Navbar = () => {
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setSubmenuDropdownOpen(false)}
                 >
-                  Our Menus
+                  {isBangla ? "আমাদের তালিকা" : "Our Menus"}
                 </span>
                 <Icon
                   icon="ic:round-play-arrow"
@@ -409,7 +411,7 @@ const Navbar = () => {
                       to="/menutab"
                       className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Menu Tab
+                      {isBangla ? "তালিকা ট্যাব" : " Menu Tab"}
                     </Link>
                   </li>
                   <li>
@@ -418,7 +420,7 @@ const Navbar = () => {
                       to="/menulist"
                       className="block px-10 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Menus List
+                      {isBangla ? "মেনু তালিকা" : "Menus List"}
                     </Link>
                   </li>
                   <li>
@@ -427,7 +429,7 @@ const Navbar = () => {
                       to="/menus"
                       className="block px-10 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Menus
+                      {isBangla ? "তালিকাগুলো" : "Menus"}
                     </Link>
                   </li>
                 </ul>
@@ -441,7 +443,7 @@ const Navbar = () => {
                 to="/reservationsform"
                 className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
               >
-                Reservations Form
+                {isBangla ? "সংরক্ষন ফর্ম" : " Reservations Form"}
               </Link>
             </li>
           </ul>
@@ -462,7 +464,9 @@ const Navbar = () => {
           className="flex group cursor-pointer items-center py-4"
           onClick={toggleBlogDropdown}
         >
-          <span onClick={() => setBlogDropdownOpen(false)}>Blog</span>
+          <span onClick={() => setBlogDropdownOpen(false)}>
+            {isBangla ? "ব্লগ" : "Blog"}
+          </span>
           <Icon
             icon="material-symbols:arrow-drop-down-rounded"
             className="group-hover:translate-y-1 duration-300"
@@ -479,7 +483,7 @@ const Navbar = () => {
                 to="/bloglist"
                 className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
               >
-                Blog List
+                {isBangla ? "ব্লগ তালিকা" : "Blog List"}
               </Link>
             </li>
 
@@ -494,7 +498,7 @@ const Navbar = () => {
                   className="hover:translate-x-1 duration-300"
                   onClick={() => setBloggridDropdownOpen(false)}
                 >
-                  Blog grid
+                  {isBangla ? "ব্লগ গ্রিড" : "Blog grid"}
                 </span>
                 <Icon
                   icon="ic:round-play-arrow"
@@ -514,7 +518,7 @@ const Navbar = () => {
                       to="/bloggrid"
                       className="block px-10 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
                     >
-                      Blog grid 4 column
+                      {isBangla ? "ব্লগ গ্রিড চার কলাম" : "Blog grid 4 columns"}
                     </Link>
                   </li>
                 </ul>
@@ -528,7 +532,7 @@ const Navbar = () => {
                 to="/blogsingle"
                 className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
               >
-                Blog Single Page
+                {isBangla ? "ব্লগ একক পৃষ্ঠা" : "Blog Single Page"}
               </Link>
             </li>
             <li>
@@ -538,7 +542,7 @@ const Navbar = () => {
                 to="/blogoverlay"
                 className="block pl-4 pt-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
               >
-                Blog Grid Overlay
+                {isBangla ? "ব্লগ গ্রিড ওভারলে" : "Blog Grid Overlay"}
               </Link>
             </li>
           </ul>
@@ -560,39 +564,8 @@ const Navbar = () => {
           className="flex group cursor-pointer items-center py-4 "
           onClick={() => setContactDropdownOpen(false)}
         >
-          <span>Contact Us</span>
-          <Icon
-            icon="material-symbols:arrow-drop-down-rounded"
-            className="group-hover:translate-y-1 duration-300"
-            width="25"
-          />
+          <span>{isBangla ? "যোগাযোগ করুন" : "Contact Us"}</span>
         </div>
-
-        {contactDropdownOpen && (
-          <ul
-            className="dropdown-menu  py-4 absolute  bg-white block z-50 duration-300 ease-in-out divide-y-2"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <li>
-              <Link
-                title="contact us"
-                to="/contactone"
-                className="block pl-4 pr-24 pb-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
-              >
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                title="contact us"
-                to="/contacttwo"
-                className="block pl-4 py-2 text-lg text-brand hover:text-primary hover:translate-x-1 duration-300"
-              >
-                Contact Us_2
-              </Link>
-            </li>
-          </ul>
-        )}
       </li>
 
       {/*............. search button  ..............*/}
