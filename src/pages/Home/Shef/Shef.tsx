@@ -25,7 +25,7 @@ const Shef = () => {
                 className="flex justify-center items-center group relative text-center cursor-pointer
                   rounded-full w-12 h-12 border-2 border-brand after:absolute after:content-normal after:top-1 after:right-1 after:bottom-1 after:left-1
                    after:bg-brand after:rounded-full after:transform after:scale-0
-                   after:transition-all after:duration-300 hover:after:transform hover:after:scale-100"
+                   after:transition-all after:duration-300 hover:after:transform hover:after:scale-100 z-10"
               >
                 <a href="#" className="block text-primary z-10">
                   <Icon
@@ -71,7 +71,8 @@ const Shef = () => {
           </div>
         </div>
         <div className="relative before:absolute before:content-normal before:bg-primary before:w-4/6 before:h-1.5 before:bottom-0">
-          <img src={chef} alt="" className="relative after:bg" />
+          <img src={chef} alt="" className="" />
+          <span className="inset-0 absolute bg-gradient-to-b from-yellow-400 to-green-400 top-0 left-0 opacity-40 hover:opacity-0 duration-300"></span>
         </div>
       </div>
     </>

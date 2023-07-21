@@ -56,14 +56,10 @@ const Slider = () => {
         spaceBetween={30}
         loop={true}
         effect={"fade"}
-        ref={swiperRef}
         navigation={{
           prevEl: ".prev-button-1",
           nextEl: ".next-button-1",
         }}
-        // pagination={{
-        //   clickable: true,
-        // }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

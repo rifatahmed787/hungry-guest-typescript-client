@@ -6,6 +6,8 @@ export default {
       backgroundImage: {
         "gradient-backdrop":
           "linear-gradient(to top right, #36393C, #141727, #141727, #141727, #141727, #141727)",
+        "image-gradient":
+          "linear-gradient(to top bottom, #E6F04E, #ABE850, #7FE552)",
       },
       colors: {
         brand: "#006635",
