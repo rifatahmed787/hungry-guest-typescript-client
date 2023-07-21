@@ -69,7 +69,7 @@ const Slider = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, EffectFade, Navigation]}
-        className={`mySwiper max-h-screen ${
+        className={`mySwiper max-h-screen relative${
           darkMode ? "bg-gradient-backdrop" : ""
         }`}
       >
@@ -101,12 +101,26 @@ const Slider = () => {
           />
         </SwiperSlide>
       </Swiper>
-      <div className="flex justify-center items-center gap-3 pt-12 text-center">
-        <button className="prev-button-1" onClick={() => goPrevButton()}>
-          <Icon icon="ic:baseline-less-than" width={25} />
+      <div className="flex justify-center items-center gap-3 pt-12 text-center absolute bottom-[70%] left-[40%] md:bottom-[55%] md:left-[44%] lg:-right-[40%] z-10 lg:bottom-[7%] ">
+        <button
+          className="prev-button-1 bg-primary rounded-full p-0.5 md:p-1"
+          onClick={() => goPrevButton()}
+        >
+          <Icon
+            icon="ic:baseline-less-than"
+            width={40}
+            className="text-white font-bold"
+          />
         </button>
-        <button className="next-button-1" onClick={() => goNextButton()}>
-          <Icon icon="ic:baseline-greater-than" width={25} />
+        <button
+          className="next-button-1 bg-primary rounded-full p-0.5 md:p-1"
+          onClick={() => goNextButton()}
+        >
+          <Icon
+            icon="ic:baseline-greater-than"
+            width={40}
+            className="text-white font-bold"
+          />
         </button>
       </div>
     </>
