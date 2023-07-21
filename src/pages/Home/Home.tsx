@@ -5,6 +5,7 @@ import Shef from "./Shef/Shef";
 import ShefSlider from "./Shef/ShefSlider";
 import Slider from "./Slider/Slider";
 import ItemCard from "./SmallCardItem/ItemCard";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <ServiceSlider />
       <Shef />
       <ShefSlider />
+      <Testimonial />
     </>
   );
 };

@@ -75,10 +75,10 @@ const ShefSlider = () => {
         className="mySwiper bg-fixed bg-cover bg-center pt-16 pl-16 "
       >
         <SwiperSlide>
-          <div className=" group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
-            <div className="w-4/5 h-fit group ">
+          <div className="w-4/5 group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+            <div className=" h-fit group ">
               <div className="relative overflow-hidden ">
-                <img className="h-96 w-full  object-cover" src={card1} alt="" />
+                <img className="h-96 w-full  " src={card1} alt="" />
                 <div className="absolute h-full w-full bg-black/60 text-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div>
                     <h1 className="text-3xl font-bold text-white mt-44">
@@ -115,10 +115,10 @@ const ShefSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
-            <div className="w-4/5 h-fit group ">
+          <div className="w-4/5  group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+            <div className="h-fit group ">
               <div className="relative overflow-hidden ">
-                <img className="h-96 w-full  object-cover" src={card2} alt="" />
+                <img className="h-96 w-full  " src={card2} alt="" />
                 <div className="absolute h-full w-full bg-black/60 text-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div>
                     <h1 className="text-3xl font-bold text-white mt-44">
@@ -155,10 +155,10 @@ const ShefSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
-            <div className="w-4/5 h-fit group ">
+          <div className="w-4/5  group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+            <div className="h-fit group ">
               <div className="relative overflow-hidden ">
-                <img className="h-96 w-full  object-cover" src={card1} alt="" />
+                <img className="h-96 w-full  " src={card1} alt="" />
                 <div className="absolute h-full w-full bg-black/60 text-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div>
                     <h1 className="text-3xl font-bold text-white mt-44">
@@ -195,10 +195,10 @@ const ShefSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
-            <div className="w-4/5 h-fit group ">
+          <div className="w-4/5 group  duration-300  relative after:absolute after:content-normal after:bg-primary after:w-1/2 after:h-1.5 after:bottom-0">
+            <div className=" h-fit group ">
               <div className="relative overflow-hidden ">
-                <img className="h-96 w-full  object-cover" src={card1} alt="" />
+                <img className="h-96 w-full  " src={card1} alt="" />
                 <div className="absolute h-full w-full bg-black/60 text-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div>
                     <h1 className="text-3xl font-bold text-white mt-44">
