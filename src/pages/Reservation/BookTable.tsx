@@ -43,7 +43,7 @@ const BookTable = () => {
               className="mx-2 font-bold"
               width={30}
             />
-            About Us
+            <Link to="/about"> About Us</Link>
           </p>
         </div>
       </div>
