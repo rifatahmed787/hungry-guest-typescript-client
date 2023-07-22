@@ -4,11 +4,18 @@ import restaurant3 from "../../../assets/homeCardImg/card6.jpeg";
 import restaurant4 from "../../../assets/homeCardImg/card2.jpg";
 import restaurant5 from "../../../assets/homeCardImg/card4.jpg";
 import BrandButton_2 from "../../../components/BrandButton/BrandButton_2";
+import { useContext } from "react";
+import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 
 const Restaurant = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-10 mx-16 my-20">
-      <div className="flex flex-col gap-5">
+    <div
+      className={`grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-10 mx-16 my-20 ${
+        darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
+      }`}
+    >
+      <div className="flex flex-col gap-5 md:px-10 md:py-16">
         <div className="grid grid-cols-3 gap-5 justify-items-center items-center overflow-hidden">
           <img
             src={restaurant3}
@@ -39,14 +46,18 @@ const Restaurant = () => {
           />
         </div>
       </div>
-      <div className="text-left mx-5 lg:mx-10">
+      <div className="text-left mx-5 lg:mx-10 md:px-10 md:py-16">
         <h4 className="text-2xl font-bold text-primary  pb-3 font-display1 ">
           Visit Our
         </h4>
-        <h1 className="uppercase text-3xl lg:text-5xl text-brand  font-bold font-display">
+        <h1 className="error uppercase text-3xl lg:text-5xl text-brand  font-bold">
           Restaurant
         </h1>
-        <p className="text-primary text-lg font-semibold py-5 mb-2">
+        <p
+          className={` text-lg font-semibold py-5 mb-2 ${
+            darkMode ? "text-white" : "text-gray-600"
+          }`}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugit
           magnam nisi itaque, accusantium dolores optio. Nisi tempora, sequi ad
           fugit perspiciatis expedita doloremque, fugiat ea beatae quisquam aut,
