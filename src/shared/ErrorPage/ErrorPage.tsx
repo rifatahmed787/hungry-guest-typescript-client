@@ -5,7 +5,7 @@ import BrandButton from "../../components/BrandButton/BrandButton";
 const ErrorPage = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="section ">
+      <div>
         <h3 className="text-2xl font-display font-bold text-primary text-center pb-3 ">
           Error
         </h3>

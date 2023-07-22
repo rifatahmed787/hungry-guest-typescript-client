@@ -14,7 +14,7 @@ const Contact = () => {
       <img src={searchBg} alt="" className=" w-full" />
       <span className="inset-0 absolute bg-black opacity-50"></span>
       <div className="absolute left-[20%] lg:left-1/3 top-1/4 lg:top-1/3 z-10">
-        <h1 className="text-3xl lg:text-5xl pb-3 lg:pb-10 text-center text-regular font-semibold">
+        <h1 className="error text-3xl lg:text-5xl pb-3 lg:pb-10 text-center text-primary font-semibold">
           Get touch with us and <br /> follow our Newsletter
         </h1>
         <form onSubmit={handleSubmit} className="absolute">
