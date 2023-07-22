@@ -40,7 +40,7 @@ const ServiceSlider = () => {
         }}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper mx-auto pl-12 pr-4"
+        className="mySwiper mx-auto pl-5 md:pl-12 md:pr-4"
       >
         <SwiperSlide>
           <div className="p-2 relative cursor-pointer border-4 w-11/12  border-primary rounded-xl ">

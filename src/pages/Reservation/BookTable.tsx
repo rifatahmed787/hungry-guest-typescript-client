@@ -49,11 +49,11 @@ const BookTable = () => {
       </div>
 
       <div
-        className={`mx-10 py-16 ${
+        className={`mx-5 md:mx-10 py-16 rounded-md ${
           darkMode ? "bg-gradient-backdrop text-white " : ""
         }`}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-5 md:mx-10">
           <div>
             <img className="md:h-[550px] w-11/12" src={image} alt="" />
           </div>
@@ -73,7 +73,9 @@ const BookTable = () => {
                   id="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary"
+                  className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
+                    darkMode ? "bg-gray-500" : ""
+                  }`}
                   required
                 />
               </div>
@@ -86,7 +88,9 @@ const BookTable = () => {
                   id="time"
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary"
+                  className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
+                    darkMode ? "bg-gray-500" : ""
+                  }`}
                   required
                 />
               </div>
@@ -100,7 +104,9 @@ const BookTable = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary"
+                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
+                  darkMode ? "bg-gray-500" : ""
+                }`}
                 required
               />
             </div>
@@ -116,7 +122,9 @@ const BookTable = () => {
                 id="numberOfPeople"
                 value={numberOfPeople}
                 onChange={(e) => setNumberOfPeople(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary"
+                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
+                  darkMode ? "bg-gray-500" : ""
+                }`}
                 required
               >
                 <option value="">Select Number of People</option>
@@ -135,7 +143,9 @@ const BookTable = () => {
                 id="phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary"
+                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
+                  darkMode ? "bg-gray-500" : ""
+                }`}
                 required
               />
             </div>
@@ -148,7 +158,9 @@ const BookTable = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary"
+                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
+                  darkMode ? "bg-gray-500" : ""
+                }`}
                 required
               />
             </div>

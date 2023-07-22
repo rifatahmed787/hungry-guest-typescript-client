@@ -1,15 +1,26 @@
 import { Icon } from "@iconify/react";
 import chef from "../../../assets/homeCardImg/shef.jpeg";
+import { useContext } from "react";
+import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 
 const Shef = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 my-32 mx-5">
-        <div className="mx-10">
-          <h1 className=" text-left text-3xl lg:text-5xl text-brand font-bold">
+      <div
+        className={`grid grid-cols-1 lg:grid-cols-2 my-32 mx-5 md:px-10 px-5 py-5 md:py-10 ${
+          darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
+        }`}
+      >
+        <div className="mx-3 md:mx-10">
+          <h1 className="error text-left text-3xl lg:text-5xl text-brand font-bold">
             Meet Our Best Chef
           </h1>
-          <p className="text-gray-600 text-lg font-semibold text-left  my-5">
+          <p
+            className={` text-lg font-semibold text-left  my-5 ${
+              darkMode ? "text-white" : "text-gray-600"
+            }`}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
             voluptatibus, omnis inventore mollitia quas qui, ab numquam quis
             corrupti atque consectetur ad minus nostrum tenetur optio in rem

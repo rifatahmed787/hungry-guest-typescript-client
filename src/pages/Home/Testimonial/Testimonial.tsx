@@ -11,6 +11,8 @@ import "swiper/css/pagination";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { useRef } from "react";
+import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
+import { useContext } from "react";
 
 type Swiper = {
   swiper: Swiper | null;
@@ -18,6 +20,7 @@ type Swiper = {
 
 const Testimonial = () => {
   const swiperRef = useRef<SwiperRef>(null);
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleMouseEnter = () => {
     if (swiperRef.current) {
@@ -33,16 +36,18 @@ const Testimonial = () => {
 
   return (
     <div
-      className="max-w-screen-xl mx-auto px-20 py-32"
+      className={`max-w-screen-xl mx-5 px-20 pb-10 my-32 ${
+        darkMode ? "bg-gradient-backdrop rounded-md" : ""
+      }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       id="client"
     >
       <div className="pb-10">
-        <p className="text-lg mb-3 pt-16 text-brand font-semibold text-center">
+        <p className="text-lg mb-3 pt-16 text-primary font-semibold text-center">
           Review
         </p>
-        <h1 className="text-3xl lg:text-5xl text-primary text-center font-bold font-display-Poppins">
+        <h1 className="text-3xl lg:text-5xl text-brand  text-center font-bold font-display-Poppins error">
           What Our Client Say
         </h1>
       </div>
@@ -52,7 +57,9 @@ const Testimonial = () => {
         {/* quote icon */}
         <Icon
           icon="fa-solid:quote-left"
-          className="absolute -left-10 top-0 opacity-20"
+          className={`absolute -left-10 top-0  ${
+            darkMode ? "text-gray-500" : "opacity-20"
+          }`}
           width={70}
         />
 
@@ -65,7 +72,11 @@ const Testimonial = () => {
           >
             <SwiperSlide className=" text-center overflow-hidden">
               {" "}
-              <article className=" font-normal italic text-[#000] text-[18px] font-sans text-center pt-1">
+              <article
+                className={`font-normal italic  text-[18px] font-sans text-center pt-1 ${
+                  darkMode ? "text-white" : "text-[#000]"
+                }`}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatibus laborum quas corrupti culpa vero et, cum voluptatem
                 veniam, aliquid quia, architecto accusantium? Fugit veniam
@@ -137,7 +148,9 @@ const Testimonial = () => {
         {/* quote icon */}
         <Icon
           icon="fa-solid:quote-right"
-          className="absolute -right-10 top-0 opacity-20"
+          className={`absolute -right-10 top-0  ${
+            darkMode ? "text-gray-500" : "opacity-20"
+          }`}
           width={70}
         />
       </div>

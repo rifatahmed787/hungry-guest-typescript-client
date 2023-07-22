@@ -11,11 +11,11 @@ const Restaurant = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-10 mx-16 my-20 ${
+      className={`grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-10 mx-5 md:mx-16 my-20 py-5 ${
         darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
       }`}
     >
-      <div className="flex flex-col gap-5 md:px-10 md:py-16">
+      <div className="flex flex-col gap-5 px-5 md:px-10 md:py-16">
         <div className="grid grid-cols-3 gap-5 justify-items-center items-center overflow-hidden">
           <img
             src={restaurant3}
