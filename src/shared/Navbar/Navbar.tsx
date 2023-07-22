@@ -15,7 +15,7 @@ import HomeMenuItem from "./HomeMenuItem/HomeMenuItem";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [homeDropdownOpen, setHomeDropdownOpen] = useState(false);
+
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [menuDropdownOpen, setMenuDropdownOpen] = useState(false);
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
   // sub next menu state
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
-  const [submenuDropdownOpen, setSubmenuDropdownOpen] = useState(false);
+
   const [bloggridDropdownOpen, setBloggridDropdownOpen] = useState(false);
 
   //navbar color change effect
@@ -47,10 +47,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // for home
-  const toggleHomeDropdown = () => setHomeDropdownOpen(!homeDropdownOpen);
-  const homeDropdownClose = () => setHomeDropdownOpen(false);
 
   //for pages
   const togglePagesDropdown = () => setPagesDropdownOpen(!pagesDropdownOpen);
@@ -85,11 +81,6 @@ const Navbar = () => {
   const toggleShopDropdown = () => setShopDropdownOpen(!shopDropdownOpen);
   const shopDropdownClose = () => setShopDropdownOpen(false);
 
-  // sub menu for menus
-  const toggleSubmenuDropdown = () =>
-    setSubmenuDropdownOpen(!submenuDropdownOpen);
-  const submenuDropdownClose = () => setSubmenuDropdownOpen(false);
-
   //sub menu for blog
   const toggleBloggridDropdown = () =>
     setBloggridDropdownOpen(!bloggridDropdownOpen);
@@ -98,8 +89,9 @@ const Navbar = () => {
   const menuItems = (
     <>
       {/*................ home dropdown menu start.............*/}
-      <li
-        className={`font-bold ${
+      <Link
+        to="/"
+        className={`font-bold  ${
           scrolled
             ? `${
                 darkMode
@@ -108,52 +100,11 @@ const Navbar = () => {
               }`
             : "text-regular hover:text-primary"
         }`}
-        onMouseEnter={toggleHomeDropdown}
-        onMouseLeave={homeDropdownClose}
-        onClick={toggleHomeDropdown}
       >
-        <div
-          className="flex group cursor-pointer items-center py-4 "
-          onClick={() => setHomeDropdownOpen(false)}
-        >
+        <div className="flex group cursor-pointer items-center py-4 pr-2 ">
           <span>{isBangla ? "হোম" : "Home"}</span>
-          <Icon
-            icon="material-symbols:arrow-drop-down-rounded"
-            className="group-hover:translate-y-1 duration-300"
-            width="25"
-          />
         </div>
-
-        {homeDropdownOpen && (
-          <ul
-            className={`dropdown-menu md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll ${
-              darkMode
-                ? "bg-gradient-backdrop text-white"
-                : "bg-white text-primary"
-            }`}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {/* home mega image  */}
-            <div className="col-span-2">
-              <img src={homeMegaImg} alt="" />
-              <h1 className="text-3xl text-center py-5  font-display-Poppins text-primary">
-                Delicious Food Ideas
-              </h1>
-              <p className="text-center pr-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequuntur asperiores quidem enim nisi consequatur esse est
-                impedit rerum temporibus nihil!
-              </p>
-              <p className="pt-5 pb-10 text-center">
-                <BrandButton_2 text="Purchase Now" />
-              </p>
-            </div>
-            <div className="col-span-4 pt-7 px-3">
-              <HomeMenuItem />
-            </div>
-          </ul>
-        )}
-      </li>
+      </Link>
 
       {/*................ pages dropdown menu start   .............*/}
       <li
@@ -437,115 +388,31 @@ const Navbar = () => {
 
         {menuDropdownOpen && (
           <ul
-            className={`dropdown-menu  py-4 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
-              darkMode ? "bg-gradient-backdrop" : "bg-white"
+            className={`dropdown-menu md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll ${
+              darkMode
+                ? "bg-gradient-backdrop text-white"
+                : "bg-white text-primary"
             }`}
+            onClick={() => setIsMenuOpen(false)}
           >
-            <li>
-              <Link
-                onClick={() => setIsMenuOpen(false)}
-                title="Reservation"
-                to="/reservation"
-                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
-                  darkMode
-                    ? "text-white hover:text-primary"
-                    : "text-brand hover:text-primary"
-                }`}
-              >
-                {isBangla ? "সংরক্ষণ" : " Reservations"}
-              </Link>
-            </li>
-
-            {/* our menu sub menu  */}
-            <li
-              onMouseEnter={toggleSubmenuDropdown}
-              onMouseLeave={submenuDropdownClose}
-              onClick={toggleSubmenuDropdown}
-            >
-              <div
-                className={`flex  justify-between items-center pl-4  py-2 text-lg  cursor-pointer group ${
-                  darkMode
-                    ? "text-white hover:text-primary"
-                    : "text-brand hover:text-primary"
-                }`}
-              >
-                <span
-                  className="hover:translate-x-1 duration-300"
-                  onClick={() => setSubmenuDropdownOpen(false)}
-                >
-                  {isBangla ? "আমাদের তালিকা" : "Our Menus"}
-                </span>
-                <Icon
-                  icon="ic:round-play-arrow"
-                  className="transform rotate-0 group-hover:rotate-90 transition-all duration-300 mr-3"
-                  width="24"
-                />
-              </div>
-
-              {submenuDropdownOpen && (
-                <ul
-                  className={`dropdown-menu  py-4 absolute -right-20 lg:-right-36  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
-                    darkMode ? "bg-gradient-backdrop" : "bg-white"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <li>
-                    <Link
-                      title="Menu Tab"
-                      to="/menutab"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
-                        darkMode
-                          ? "text-white hover:text-primary"
-                          : "text-brand hover:text-primary"
-                      }`}
-                    >
-                      {isBangla ? "তালিকা ট্যাব" : " Menu Tab"}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      title="Menus List"
-                      to="/menulist"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
-                        darkMode
-                          ? "text-white hover:text-primary"
-                          : "text-brand hover:text-primary"
-                      }`}
-                    >
-                      {isBangla ? "মেনু তালিকা" : "Menus List"}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      title="Menus"
-                      to="/menus"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
-                        darkMode
-                          ? "text-white hover:text-primary"
-                          : "text-brand hover:text-primary"
-                      }`}
-                    >
-                      {isBangla ? "তালিকাগুলো" : "Menus"}
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-
-            <li>
-              <Link
-                onClick={() => setIsMenuOpen(false)}
-                title="Reservations Form"
-                to="/reservationsform"
-                className={`block pl-4 py-2 text-lg  hover:translate-x-1 duration-300 ${
-                  darkMode
-                    ? "text-white hover:text-primary"
-                    : "text-brand hover:text-primary"
-                }`}
-              >
-                {isBangla ? "সংরক্ষন ফর্ম" : " Reservations Form"}
-              </Link>
-            </li>
+            {/* home mega image  */}
+            <div className="col-span-2">
+              <img src={homeMegaImg} alt="" />
+              <h1 className="text-3xl text-center py-5  font-display-Poppins text-primary">
+                Delicious Food Ideas
+              </h1>
+              <p className="text-center pr-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequuntur asperiores quidem enim nisi consequatur esse est
+                impedit rerum temporibus nihil!
+              </p>
+              <p className="pt-5 pb-10 text-center">
+                <BrandButton_2 text="Purchase Now" />
+              </p>
+            </div>
+            <div className="col-span-4 pt-7 px-3">
+              <HomeMenuItem />
+            </div>
           </ul>
         )}
       </li>
