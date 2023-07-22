@@ -42,11 +42,11 @@ const About = () => {
           >
             <div className="lg:w-4/6 mx-auto">
               <div className="flex flex-col sm:flex-row px-5">
-                <div className="sm:w-1/3 text-center cursor-pointer duration-300 shadow-lg sm:py-8 group border-2 rounded-lg hover:border-brand">
+                <div className="sm:w-1/3 text-center cursor-pointer duration-300 shadow-lg sm:py-8 group border-2 rounded-lg hover:border-brand my-auto">
                   <div className="w-20 h-20 rounded-full inline-flex items-center justify-center ">
                     <img
                       alt="testimonial"
-                      className=" group-hover:border-brand w-20 h-20  mb-8 group-hover:scale-125 duration-500 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-brand"
+                      className=" group-hover:border-brand w-20 h-20  mb-8 group-hover:scale-125 duration-500 object-cover object-center rounded-full inline-block  bg-brand"
                       src="https://i.ytimg.com/vi/avB1qUOLHLg/maxresdefault.jpg"
                     />
                   </div>
@@ -55,14 +55,35 @@ const About = () => {
                       Our Chef
                     </h2>
                     <div className="w-12 h-1 group-hover:w-full duration-300 bg-brand rounded mt-2 mb-4"></div>
-                    <p className="text-base px-4">
-                      Raclette knausgaard hella meggs normcore williamsburg
-                      enamel pin sartorial venmo tbh hot chicken gentrify
-                      portland.
-                    </p>
+                    <h3 className="tracking-widest text-center text-xl md:text-2xl font-medium title-font ">
+                      Md Rifat
+                    </h3>
+                    <div className="flex justify-center items-center gap-3 pt-4 text-gray-300 py-3">
+                      <a href="">
+                        <Icon
+                          icon="ic:baseline-facebook"
+                          width="28"
+                          className="hover:translate-y-2 duration-300 text-brand"
+                        />
+                      </a>
+                      <a href="">
+                        <Icon
+                          icon="mdi:twitter"
+                          width="28"
+                          className="hover:translate-y-2 duration-300 text-brand"
+                        />
+                      </a>
+                      <a href="">
+                        <Icon
+                          icon="mdi:instagram"
+                          width="28"
+                          className="hover:translate-y-2 duration-300 text-brand"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l group border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <div className="sm:w-2/3 sm:pl-8 sm:py-8 t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                   <p className="leading-relaxed  text-lg mb-4">
                     Meggings portland fingerstache lyft, post-ironic fixie man
                     bun banh mi umami everyday carry hexagon locavore direct
