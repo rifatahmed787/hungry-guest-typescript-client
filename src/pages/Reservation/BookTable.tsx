@@ -60,7 +60,7 @@ const BookTable = () => {
 
           {/* form */}
           <form onSubmit={handleSubmit}>
-            <h1 className="text-3xl lg:text-5xl font-display1 text-brand font-bold mb-4">
+            <h1 className="text-3xl lg:text-5xl font-display1 text-brand font-bold mb-4 error">
               Make a Booking
             </h1>
             <div className="grid grid-cols-2 gap-5">
