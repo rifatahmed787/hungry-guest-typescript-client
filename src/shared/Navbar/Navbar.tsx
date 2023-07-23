@@ -145,7 +145,7 @@ const Navbar = () => {
               <Link
                 title="Landing Page"
                 to="/landing"
-                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 pr-24 pb-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -161,7 +161,7 @@ const Navbar = () => {
               <Link
                 title="about us"
                 to="/about"
-                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 pr-24 py-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -177,7 +177,7 @@ const Navbar = () => {
               <Link
                 title="Our Team"
                 to="/team"
-                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 pr-24 py-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -195,7 +195,7 @@ const Navbar = () => {
               onClick={toggleServicesDropdown}
             >
               <div
-                className={`flex  justify-between items-center pl-4  py-2 text-lg  cursor-pointer group ${
+                className={`flex  justify-between items-center pl-4  py-3 text-lg  cursor-pointer group ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -225,7 +225,7 @@ const Navbar = () => {
                     <Link
                       title="single service"
                       to="/singleservice"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block px-10 pb-3 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -238,7 +238,7 @@ const Navbar = () => {
                     <Link
                       title="service list"
                       to="/servicelist"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block px-10 py-3 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -251,7 +251,7 @@ const Navbar = () => {
                     <Link
                       title="service grid"
                       to="/servicegrid"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block px-10 pt-3 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -271,7 +271,7 @@ const Navbar = () => {
               onClick={toggleShopDropdown}
             >
               <div
-                className={`flex  justify-between items-center pl-4  py-2 text-lg cursor-pointer group ${
+                className={`flex  justify-between items-center pl-4  py-3 text-lg cursor-pointer group ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary "
@@ -301,7 +301,7 @@ const Navbar = () => {
                     <Link
                       title="Cart Page"
                       to="/cartpage"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block px-10 pb-3 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -314,7 +314,7 @@ const Navbar = () => {
                     <Link
                       title="Checkout Page"
                       to="/checkout"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block px-10 py-3 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -327,7 +327,7 @@ const Navbar = () => {
                     <Link
                       title="My Account"
                       to="/myaccount"
-                      className={`block px-10 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block px-10 pt-3 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -345,7 +345,7 @@ const Navbar = () => {
               <Link
                 title="FAQ"
                 to="/faq"
-                className={`block pl-4 py-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 pt-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -456,7 +456,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 title="Blog List"
                 to="/bloglist"
-                className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 pr-24 pb-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -473,7 +473,7 @@ const Navbar = () => {
               onClick={toggleBloggridDropdown}
             >
               <div
-                className={`flex  justify-between items-center pl-4  py-2 text-lg  cursor-pointer group ${
+                className={`flex  justify-between items-center pl-4  py-3 text-lg  cursor-pointer group ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -503,7 +503,7 @@ const Navbar = () => {
                     <Link
                       title="Blog grid"
                       to="/bloggrid"
-                      className={`block pl-4 pr-24 pb-2 text-lg  hover:translate-x-1 duration-300 ${
+                      className={`block pl-4 pr-24 py-2 text-lg  hover:translate-x-1 duration-300 ${
                         darkMode
                           ? "text-white hover:text-primary"
                           : "text-brand hover:text-primary"
@@ -521,7 +521,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 title="Blog Single"
                 to="/blogsingle"
-                className={`block pl-4 py-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 py-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"
@@ -535,7 +535,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 title="Blog overlay"
                 to="/blogoverlay"
-                className={`block pl-4 pt-2 text-lg  hover:translate-x-1 duration-300 ${
+                className={`block pl-4 pt-3 text-lg  hover:translate-x-1 duration-300 ${
                   darkMode
                     ? "text-white hover:text-primary"
                     : "text-brand hover:text-primary"

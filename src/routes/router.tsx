@@ -5,6 +5,7 @@ import ErrorPage from "../shared/ErrorPage/ErrorPage";
 import BookTable from "../pages/Reservation/BookTable";
 import About from "../pages/ServicesPages/About_us/About";
 import Faq from "../pages/ServicesPages/FAQ/Faq";
+import ServiceSingle from "../pages/ServicesPages/Our Services/ServiceSingle/ServiceSingle";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/faq",
         element: <Faq />,
+      },
+      {
+        path: "/singleservice",
+        element: <ServiceSingle />,
       },
     ],
   },

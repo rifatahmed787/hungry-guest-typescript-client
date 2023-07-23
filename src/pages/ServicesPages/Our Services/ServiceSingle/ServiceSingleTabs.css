@@ -1,0 +1,21 @@
+.active-tab-content {
+  animation: bottomToTop 0.5s;
+}
+
+@keyframes bottomToTop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.react-tabs__tab--selected {
+  color: #f8981d !important;
+  border-radius: 5px 5px 5px 5px !important;
+}
+
+.react-tabs__tab {
+  border: 2px solid #f8981d !important;
+}
