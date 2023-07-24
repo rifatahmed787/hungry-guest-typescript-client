@@ -97,7 +97,7 @@ const Slider = () => {
           />
         </SwiperSlide>
       </Swiper>
-      <div className="flex justify-center items-center gap-3 pt-12 text-center absolute bottom-[70%] left-[40%] md:bottom-[55%] md:left-[44%] lg:-right-[40%] z-10 lg:bottom-[7%] ">
+      <div className="flex justify-center items-center gap-3 pt-12 text-center absolute bottom-[70%] left-[40%] md:bottom-[55%] md:left-[44%] lg:-right-[40%] z-10 lg:bottom-[7%]">
         <button
           className="prev-button-1 bg-primary rounded-full p-0.5 md:p-1"
           onClick={() => goPrevButton()}

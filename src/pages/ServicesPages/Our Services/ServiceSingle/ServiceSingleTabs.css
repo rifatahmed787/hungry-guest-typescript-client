@@ -13,9 +13,15 @@
 
 .react-tabs__tab--selected {
   color: #f8981d !important;
-  border-radius: 5px 5px 5px 5px !important;
+  border-radius: 0px !important;
+  background: none !important;
 }
 
 .react-tabs__tab {
   border: 2px solid #f8981d !important;
+  bottom: 0 !important;
+  position: static !important;
+}
+.react-tabs__tab:focus:after {
+  background: none !important;
 }

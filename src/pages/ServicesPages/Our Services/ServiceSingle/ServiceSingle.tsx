@@ -12,7 +12,7 @@ const ServiceSingle = () => {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={`pb-5 ${darkMode ? "bg-black text-white" : ""}`}>
+    <div className={`pb-16  ${darkMode ? "bg-black text-white" : ""}`}>
       <div className="relative after:absolute after:content-normal after:bg-black after:w-full after:h-full after:top-0 after:left-0 after:opacity-40">
         <img src={serviceBanner} alt="" className="w-full " />
         <div className="absolute bo top-16 md:top-32 z-10 lg:top-1/3 left-28 md:left-[40%] lg:left-[38%]z-">
@@ -33,8 +33,8 @@ const ServiceSingle = () => {
         </div>
       </div>
       <div
-        className={`px-4 my-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 rounded-md ${
-          darkMode ? "bg-gradient-backdrop text-white" : ""
+        className={`px-4 mx-8 my-16  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 rounded-md py-5 ${
+          darkMode ? "bg-gradient-backdrop text-white " : ""
         }`}
       >
         <div className="grid gap-10 lg:grid-cols-2">

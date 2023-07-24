@@ -54,30 +54,30 @@ const SideBar = () => {
             >
               {scrolled ? (
                 <span
-                  className={`line w-8 h-[3px] ${
+                  className={`line w-6 h-[3px] ${
                     darkMode ? "bg-white" : "bg-brand"
                   }`}
                 ></span>
               ) : (
-                <span className="line w-8 h-[3px] bg-white"></span>
+                <span className="line w-6 h-[3px] bg-white"></span>
               )}
               {scrolled ? (
                 <span
-                  className={`line w-8 h-[3px] ${
+                  className={`line w-6 h-[3px] ${
                     darkMode ? "bg-white" : "bg-brand"
                   }`}
                 ></span>
               ) : (
-                <span className="line w-8 h-[3px] bg-white"></span>
+                <span className="line w-6 h-[3px] bg-white"></span>
               )}
               {scrolled ? (
                 <span
-                  className={`line w-8 h-[3px] ${
+                  className={`line w-6 h-[3px] ${
                     darkMode ? "bg-white" : "bg-brand"
                   }`}
                 ></span>
               ) : (
-                <span className="line w-8 h-[3px] bg-white"></span>
+                <span className="line w-6 h-[3px] bg-white"></span>
               )}
             </button>
           </div>

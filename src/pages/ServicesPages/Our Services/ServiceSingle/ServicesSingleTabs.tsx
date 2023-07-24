@@ -10,21 +10,23 @@ import { useContext } from "react";
 const ServicesSingleTabs = () => {
   const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="mt-10 mx-10">
+    <div className="mt-10 mx-8">
       <div
-        className={` ${
+        className={`flex justify-center ${
           darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
         }`}
       >
         <Tabs>
-          <TabList className="text-brand  space-y-5 w-4/5 mx-auto lg:space-x-52 text-base font-bold pt-10">
+          <TabList className="text-brand md:flex  justify-center md:gap-32  space-x-5 text-center  text-base font-bold pt-10 space-y-5 md:space-y-0">
             <Tab>Description</Tab>
-            <Tab>Additional Information</Tab>
+
             <Tab>Reviews (2)</Tab>
+
+            <Tab>Information</Tab>
           </TabList>
 
-          <TabPanel className="my-16">
-            <h2 className="text-lg px-5 active-tab-content w-4/5 mx-auto pb-16">
+          <TabPanel className="my-16 px-3 md:pl-16 md:mx-28">
+            <h2 className="text-lg  flex active-tab-content w-11/12 md:w-4/5 md:ml-44  pb-16 text-center md:text-left">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
               quam, pariatur facere nihil sit voluptatem, tenetur nam fugiat,
               corrupti perspiciatis non voluptatibus ducimus. Necessitatibus
@@ -33,18 +35,7 @@ const ServicesSingleTabs = () => {
           </TabPanel>
 
           <TabPanel>
-            <div className="active-tab-content my-16 mx-5 w-4/5">
-              <p>
-                <span className="font-bold text-lg">Weight</span> 0.5 kg
-              </p>
-              <p>
-                <span className="font-bold text-lg">Dimensions</span> 36*28*10cm
-              </p>
-            </div>
-          </TabPanel>
-
-          <TabPanel>
-            <div className="active-tab-content mx-5 w-4/5">
+            <div className="active-tab-content mx-5 w-11/12 md:w-4/5 md:pl-56">
               <div className="flex justify-start items-start space-x-4 py-5">
                 <img
                   className="w-16 h-16 rounded-full"
@@ -107,6 +98,17 @@ const ServicesSingleTabs = () => {
               </div>
             </div>
             {/* Comment form section start end*/}
+          </TabPanel>
+
+          <TabPanel>
+            <div className="active-tab-content my-16  w-full pl-5 md:pl-0 md:w-4/5">
+              <p>
+                <span className="font-bold text-lg">Weight</span> 0.5 kg
+              </p>
+              <p>
+                <span className="font-bold text-lg">Dimensions</span> 36*28*10cm
+              </p>
+            </div>
           </TabPanel>
         </Tabs>
       </div>
