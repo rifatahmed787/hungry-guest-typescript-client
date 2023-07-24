@@ -19,7 +19,7 @@ const Navbar = () => {
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [menuDropdownOpen, setMenuDropdownOpen] = useState(false);
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
-  const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
+
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { darkMode, isBangla } = useContext(DarkModeContext);
 
@@ -59,11 +59,6 @@ const Navbar = () => {
   //for blog
   const toggleBlogDropdown = () => setBlogDropdownOpen(!blogDropdownOpen);
   const blogDropdownClose = () => setBlogDropdownOpen(false);
-
-  //for doctors
-  const toggleContactDropdown = () =>
-    setContactDropdownOpen(!contactDropdownOpen);
-  const contactDropdownClose = () => setContactDropdownOpen(false);
 
   //for search button icon
   const handleSearchOpen = () => {
@@ -559,16 +554,13 @@ const Navbar = () => {
               }`
             : "text-regular hover:text-primary"
         }`}
-        onMouseEnter={toggleContactDropdown}
-        onMouseLeave={contactDropdownClose}
-        onClick={toggleContactDropdown}
       >
-        <div
+        <Link
+          to="/contact"
           className="flex group cursor-pointer items-center py-4 "
-          onClick={() => setContactDropdownOpen(false)}
         >
           <span>{isBangla ? "যোগাযোগ করুন" : "Contact Us"}</span>
-        </div>
+        </Link>
       </li>
 
       {/*............. search button  ..............*/}

@@ -8,6 +8,7 @@ import Faq from "../pages/ServicesPages/FAQ/Faq";
 import ServiceSingle from "../pages/ServicesPages/Our Services/ServiceSingle/ServiceSingle";
 import ServiceList from "../pages/ServicesPages/Our Services/ServiceList/ServiceList";
 import ServiceGrid from "../pages/ServicesPages/Our Services/ServiceGrid/ServiceGrid";
+import Contact from "../pages/ContactPage/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "/servicegrid",
         element: <ServiceGrid />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
