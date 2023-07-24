@@ -119,7 +119,7 @@ const About = () => {
             }`}
           >
             <div className="lg:w-2/3 mx-auto">
-              <div className="flex flex-wrap group w-full relative after:absolute after:content-normal after:bg-gradient-to-b from-yellow-400 to-green-400 after:w-full after:h-full after:top-0 after:left-0 after:opacity-40 after:hover:opacity-0 after:hover:duration-300 py-32 px-10  mb-4 opacity-">
+              <div className="flex flex-wrap group w-full relative after:absolute after:content-normal after:bg-gradient-to-b from-yellow-400 to-green-400 after:w-full after:h-full after:top-0 after:left-0 after:opacity-40 after:hover:opacity-0 after:hover:duration-300 py-32 px-10  mb-4">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block absolute inset-0"

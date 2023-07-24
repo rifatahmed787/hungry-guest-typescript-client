@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // eslint-disable-next-line react/prop-types
 const ServiceListCard = ({ foodCard }) => {
   // eslint-disable-next-line react/prop-types

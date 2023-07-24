@@ -6,6 +6,8 @@ import BookTable from "../pages/Reservation/BookTable";
 import About from "../pages/ServicesPages/About_us/About";
 import Faq from "../pages/ServicesPages/FAQ/Faq";
 import ServiceSingle from "../pages/ServicesPages/Our Services/ServiceSingle/ServiceSingle";
+import ServiceList from "../pages/ServicesPages/Our Services/ServiceList/ServiceList";
+import ServiceGrid from "../pages/ServicesPages/Our Services/ServiceGrid/ServiceGrid";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ export const router = createBrowserRouter([
       {
         path: "/singleservice",
         element: <ServiceSingle />,
+      },
+      {
+        path: "/servicelist",
+        element: <ServiceList />,
+      },
+      {
+        path: "/servicegrid",
+        element: <ServiceGrid />,
       },
     ],
   },

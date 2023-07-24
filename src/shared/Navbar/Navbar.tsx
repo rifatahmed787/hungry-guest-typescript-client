@@ -184,7 +184,7 @@ const Navbar = () => {
                 }`}
                 onClick={() => setPagesDropdownOpen(false)}
               >
-                {isBangla ? "মেম্বার" : "Our Team"}
+                {isBangla ? "সদস্য" : "Our Team"}
               </Link>
             </li>
 

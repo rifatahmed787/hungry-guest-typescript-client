@@ -1,10 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { Link } from "react-router-dom";
 import servicebanner from "../../../../assets/homeCardImg/home (1).jpeg";
 import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
 
 const ServiceList = () => {
   const [categories, setCategories] = useState([]);
+  const { darkMode } = useContext(DarkModeContext);
 
   const [items, setItems] = useState([]);
 
@@ -41,6 +47,7 @@ const ServiceList = () => {
       if (categoryId === "all") {
         filteredItems = data;
       } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         filteredItems = data.filter((item) => item.category_id === categoryId);
       }
 
@@ -56,7 +63,7 @@ const ServiceList = () => {
   };
 
   return (
-    <>
+    <div className={`pb-10 px-5 ${darkMode ? "bg-black text-white" : ""}`}>
       {/* banner part */}
       <div>
         <img
@@ -84,7 +91,11 @@ const ServiceList = () => {
       </div>
 
       {/* main section  */}
-      <div className="my-16">
+      <div
+        className={`my-16 py-5 ${
+          darkMode ? "bg-gradient-backdrop text-white rounded-t-md" : ""
+        }`}
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 p-3 mx-10">
           <section>
             {/* categories  */}
@@ -164,11 +175,14 @@ const ServiceList = () => {
                           src={product.image_url}
                           className="absolute z-0 object-cover w-full h-96 transform group-hover:scale-125 duration-500"
                         />
+
+                        <span className="inset-0 absolute bg-gradient-to-b from-yellow-400 to-green-400 top-0 left-0 opacity-25 hover:opacity-0 duration-300"></span>
+
                         <div className="absolute gradient transition duration-300 group-hover:bg-black group-hover:opacity-60 w-full h-72 md:h-96 z-10"></div>
                         <div className="absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-300 h-full group-hover:translate-y-0 delay-100">
                           <div className="h-1/2 relative">
                             <div className="absolute bottom-0">
-                              <h2 className="font-semibold group-hover:text-regular text-brand font-display transition duration-300  pb-6 text-3xl lg:text-5xl group-hover:underline">
+                              <h2 className="font-semibold group-hover:text-regular text-black font-display transition duration-300  pb-6 text-3xl lg:text-5xl group-hover:underline">
                                 {product.name}
                               </h2>
                             </div>
@@ -246,7 +260,7 @@ const ServiceList = () => {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
