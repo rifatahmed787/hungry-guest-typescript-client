@@ -9,6 +9,8 @@ import ServiceSingle from "../pages/ServicesPages/Our Services/ServiceSingle/Ser
 import ServiceList from "../pages/ServicesPages/Our Services/ServiceList/ServiceList";
 import ServiceGrid from "../pages/ServicesPages/Our Services/ServiceGrid/ServiceGrid";
 import Contact from "../pages/ContactPage/Contact";
+import CheckOutPage from "../pages/ServicesPages/Shop/ChackOut/CheckOutPage";
+import Cart from "../pages/ServicesPages/Shop/ShoppingCart/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
       {
         path: "/servicegrid",
         element: <ServiceGrid />,
+      },
+      {
+        path: "cartpage",
+        element: <Cart />,
+      },
+      {
+        path: "/checkout",
+        element: <CheckOutPage />,
       },
       {
         path: "/contact",

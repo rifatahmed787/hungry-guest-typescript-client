@@ -136,7 +136,7 @@ const ServiceList = () => {
       {/* Component Start */}
 
       <div
-        className={`flex flex-col sm:flex-row sm:items-end sm:justify-between mx-5 px-16 mt-16 ${
+        className={`flex flex-col sm:flex-row sm:items-end sm:justify-between mx-5 px-16 mt-10 ${
           darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
         }`}
       >
@@ -214,7 +214,7 @@ const ServiceList = () => {
 
       {/* service card */}
       <div
-        className={`py-10 my-16 mx-5 ${
+        className={`pb-10 my-16 mx-5 ${
           darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
         }`}
       >
