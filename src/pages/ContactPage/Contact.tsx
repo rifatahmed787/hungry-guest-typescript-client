@@ -105,17 +105,18 @@ const Contact = () => {
               type="text"
               name="floating_first_name"
               id="floating_first_name"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-2 border-gray-300 appearance-none rounded-md dark:text-white focus:outline-none focus:ring-0 focus:border-blue-600 peer focus:border-t-1 pl-2"
               placeholder=" "
               required
             />
             <label
               htmlFor="floating_first_name"
-              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute  text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2 peer-focus:bg-white peer-focus:absolute peer-focus:z-10 peer-focus:px-2"
             >
               First name
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
@@ -132,6 +133,7 @@ const Contact = () => {
               Last name
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="email"
@@ -167,10 +169,10 @@ const Contact = () => {
             </label>
           </div>
         </div>
+
         <div className="flex flex-col px-10 pb-10 mx-auto">
           <div className="relative z-0 w-full mb-6 group">
             <textarea
-              type="text"
               className="block pt-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
@@ -188,7 +190,7 @@ const Contact = () => {
             <BrandButton text="Send" />
           </div>
         </div>
-        <div className="absolute before:rounded-br-3xl after:rounded-br-3xl -right-0.5 -bottom-0.5 w-2/3 h-2/3 border-r-1 border-b-1 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-[#6490d1] after:absolute after:bottom-0 after:right-0  after:border-r-2 after:border-b-2 after:border-[#5d76f1] -z-10 " />
+        <div className="absolute before:rounded-br-3xl after:rounded-br-3xl -right-0.5 -bottom-0.5 w-2/3 h-2/3 border-r-1 border-b-1 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-primary after:absolute after:bottom-0 after:right-0  after:border-r-2 after:border-b-2 after:border-primary -z-10 " />
       </form>
 
       {/* google map */}
@@ -200,8 +202,6 @@ const Contact = () => {
             className="absolute inset-0"
             frameBorder="0"
             title="map"
-            marginHeight="0"
-            marginWidth="0"
             scrolling="no"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.3482689250204!2d90.35367527506733!3d23.80621167863229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c162749924dd%3A0x4d0b750e1fcaea7c!2sWeero%20Digital!5e0!3m2!1sen!2sbd!4v1683634586464!5m2!1sen!2sbd"
           ></iframe>
