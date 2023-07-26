@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import colorLogo from "../../assets/hungry-guest-green.png";
 import colorLogo1 from "../../assets/hungry-guest-yellow.png";
 import { Icon } from "@iconify/react";
@@ -15,6 +15,7 @@ import HomeMenuItem from "./HomeMenuItem/HomeMenuItem";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [menuDropdownOpen, setMenuDropdownOpen] = useState(false);
@@ -84,26 +85,32 @@ const Navbar = () => {
   const menuItems = (
     <>
       {/*................ home dropdown menu start.............*/}
-      <Link
-        to="/"
-        className={`font-bold  ${
-          scrolled
-            ? `${
-                darkMode
-                  ? "text-white hover:text-brand"
-                  : "hover:text-primary  text-brand"
-              }`
-            : "text-regular hover:text-primary"
+      <li
+        className={`py-7 ${
+          location.pathname === "/" ? "border-b-2 border-primary" : ""
         }`}
       >
-        <div className="flex group cursor-pointer items-center py-4 pr-2 ">
-          <span>{isBangla ? "হোম" : "Home"}</span>
-        </div>
-      </Link>
+        <Link
+          to="/"
+          className={`font-bold  ${
+            scrolled
+              ? `${
+                  darkMode
+                    ? "text-white hover:text-brand"
+                    : "hover:text-primary  text-brand"
+                }`
+              : "text-regular hover:text-primary"
+          }`}
+        >
+          <div className="flex group cursor-pointer items-center  ">
+            <span>{isBangla ? "হোম" : "Home"}</span>
+          </div>
+        </Link>
+      </li>
 
       {/*................ pages dropdown menu start   .............*/}
       <li
-        className={`font-bold ${
+        className={`font-bold py-7 cursor-pointer ${
           scrolled
             ? `${
                 darkMode
@@ -116,7 +123,7 @@ const Navbar = () => {
         onMouseLeave={pagesDropdownClose}
       >
         <div
-          className="flex group cursor-pointer items-center py-4"
+          className="flex group cursor-pointer items-center"
           onClick={togglePagesDropdown}
         >
           <span onClick={() => setPagesDropdownOpen(false)}>
@@ -131,7 +138,7 @@ const Navbar = () => {
 
         {pagesDropdownOpen && (
           <ul
-            className={`dropdown-menu  py-4 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
+            className={`dropdown-menu  py-4 mt-7 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
               darkMode ? "bg-gradient-backdrop" : "bg-white"
             }`}
           >
@@ -355,7 +362,7 @@ const Navbar = () => {
 
       {/*............... menu dropdown start .................*/}
       <li
-        className={`font-bold ${
+        className={`font-bold py-7 cursor-pointer ${
           scrolled
             ? `${
                 darkMode
@@ -368,7 +375,7 @@ const Navbar = () => {
         onMouseLeave={menuDropdownClose}
       >
         <div
-          className="flex group cursor-pointer items-center py-4"
+          className="flex group cursor-pointer items-center "
           onClick={toggleMenuDropdown}
         >
           <span onClick={() => setMenuDropdownOpen(false)}>
@@ -383,7 +390,7 @@ const Navbar = () => {
 
         {menuDropdownOpen && (
           <ul
-            className={`dropdown-menu md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll ${
+            className={`dropdown-menu md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll mt-7 ${
               darkMode
                 ? "bg-gradient-backdrop text-white"
                 : "bg-white text-primary"
@@ -414,7 +421,7 @@ const Navbar = () => {
 
       {/*................ Blog dropdown menu start ................*/}
       <li
-        className={`font-bold ${
+        className={`font-bold py-7 cursor-pointer ${
           scrolled
             ? `${
                 darkMode
@@ -427,7 +434,7 @@ const Navbar = () => {
         onMouseLeave={blogDropdownClose}
       >
         <div
-          className="flex group cursor-pointer items-center py-4"
+          className="flex group cursor-pointer items-center"
           onClick={toggleBlogDropdown}
         >
           <span onClick={() => setBlogDropdownOpen(false)}>
@@ -442,7 +449,7 @@ const Navbar = () => {
 
         {blogDropdownOpen && (
           <ul
-            className={`dropdown-menu  py-4 absolute block z-50 duration-300 ease-in-out divide-y-2 ${
+            className={`dropdown-menu  py-4 mt-7 absolute block z-50 duration-300 ease-in-out divide-y-2 ${
               darkMode ? "bg-gradient-backdrop" : "bg-white"
             }`}
           >
@@ -639,7 +646,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 z-50 w-full transition py-3 duration-500 ${
+        className={`fixed top-0 z-10 w-full transition duration-500 ${
           scrolled
             ? `bg-regular dropdown-menu shadow-lg ${
                 darkMode ? "bg-gradient-backdrop" : ""
