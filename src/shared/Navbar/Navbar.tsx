@@ -123,7 +123,7 @@ const Navbar = () => {
             {isBangla ? "পৃষ্ঠা" : "Pages"}
           </span>
           <Icon
-            icon="material-symbols:arrow-drop-down-rounded"
+            icon="iconamoon:arrow-down-2-bold"
             className="group-hover:translate-y-1 duration-300"
             width="25"
           />
@@ -375,7 +375,7 @@ const Navbar = () => {
             {isBangla ? "তালিকা" : "Menu"}
           </span>
           <Icon
-            icon="material-symbols:arrow-drop-down-rounded"
+            icon="iconamoon:arrow-down-2-bold"
             className="group-hover:translate-y-1 duration-300"
             width="25"
           />
@@ -434,7 +434,7 @@ const Navbar = () => {
             {isBangla ? "ব্লগ" : "Blog"}
           </span>
           <Icon
-            icon="material-symbols:arrow-drop-down-rounded"
+            icon="iconamoon:arrow-down-2-bold"
             className="group-hover:translate-y-1 duration-300"
             width="25"
           />
