@@ -1,6 +1,6 @@
 import slider1 from "../../../assets/SliderImage/slider.jpg";
-import slider2 from "../../../assets/SliderImage/slider1.jpg";
-import slider3 from "../../../assets/SliderImage/hamburger.jpg";
+import slider2 from "../../../assets/SliderImage/slider1.jpeg";
+import slider3 from "../../../assets/SliderImage/hamburger.jpeg";
 import sliderLogo from "../../../assets/SliderImage/slideLogo.png";
 
 // Import Swiper React components
@@ -75,7 +75,7 @@ const Slider = () => {
           <img
             src={sliderLogo}
             alt=""
-            className="absolute left-[35%] top-[15%] w-1/3 transform transition-transform duration-700 group-hover:scale-110 cursor-pointer"
+            className="absolute left-0 right-0 mx-auto top-[15%] w-1/3 transform transition-transform duration-700 group-hover:scale-110 cursor-pointer"
           />
         </SwiperSlide>
         <SwiperSlide className="group">
@@ -84,7 +84,7 @@ const Slider = () => {
           <img
             src={sliderLogo}
             alt=""
-            className="absolute left-[35%] top-[15%] w-1/3 transform transition-transform duration-700 group-hover:scale-110 cursor-pointer"
+            className="absolute left-0 right-0 mx-auto top-[15%] w-1/3 transform transition-transform duration-700 group-hover:scale-110 cursor-pointer"
           />
         </SwiperSlide>
         <SwiperSlide className="group">
@@ -93,17 +93,17 @@ const Slider = () => {
           <img
             src={sliderLogo}
             alt=""
-            className="absolute left-[35%] top-[15%] w-1/3 transform transition-transform duration-700 group-hover:scale-110 cursor-pointer"
+            className="absolute left-0 right-0 mx-auto top-[15%] w-1/3 transform transition-transform duration-700 group-hover:scale-110 cursor-pointer"
           />
         </SwiperSlide>
       </Swiper>
-      <div className="flex justify-center items-center gap-3 pt-12 text-center absolute bottom-[70%] left-[40%] md:bottom-[55%] md:left-[44%] lg:-right-[40%] z-10 lg:bottom-[7%]">
+      <div className="flex justify-center items-center gap-3 pt-12 text-center absolute bottom-[72%] left-[40%] md:bottom-[55%] md:left-[44%] lg:-right-[40%] z-10 lg:bottom-[7%]">
         <button
           className="prev-button-1 bg-primary rounded-full p-0.5 md:p-1"
           onClick={() => goPrevButton()}
         >
           <Icon
-            icon="ic:baseline-less-than"
+            icon="ep:arrow-left-bold"
             width={40}
             className="text-white font-bold"
           />
@@ -113,7 +113,7 @@ const Slider = () => {
           onClick={() => goNextButton()}
         >
           <Icon
-            icon="ic:baseline-greater-than"
+            icon="ep:arrow-right-bold"
             width={40}
             className="text-white font-bold"
           />

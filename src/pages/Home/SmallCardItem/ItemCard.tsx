@@ -11,6 +11,7 @@ import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeCon
 
 const ItemCard = () => {
   const { darkMode } = useContext(DarkModeContext);
+
   return (
     <div className="my-16">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center items-center px-5">
@@ -22,7 +23,7 @@ const ItemCard = () => {
           <div className="relative group">
             <img src={cardpng1} className=" img-spin-slowly rounded-full" />
             <span className="inset-0 absolute top-0 left-0 bg-black opacity-0  group-hover:opacity-50 duration-500 rounded-xl"></span>
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center border-2 border-brand rounded-xl border-dashed opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center  opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
               <div>
                 <h1 className="text-3xl font-bold text-regular pb-5">
                   Fried Rice
@@ -47,6 +48,7 @@ const ItemCard = () => {
             </div>
           </div>
         </div>
+
         <div
           className={`p-4  relative border  border-primary rounded-xl drop-shadow-xl ${
             darkMode ? "bg-gradient-backdrop text-white border-none" : ""
@@ -55,7 +57,7 @@ const ItemCard = () => {
           <div className="relative group">
             <img src={cardpng2} className=" img-spin-slowly rounded-full" />
             <span className="inset-0 absolute top-0 left-0 bg-black opacity-0  group-hover:opacity-50 duration-500 rounded-xl"></span>
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center border-2 border-brand rounded-xl border-dashed opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center  opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
               <div>
                 <h1 className="text-3xl font-bold text-regular pb-5">
                   Chingri Fish
@@ -88,7 +90,7 @@ const ItemCard = () => {
           <div className="relative group">
             <img src={cardpng3} className=" img-spin-slowly rounded-full" />
             <span className="inset-0 absolute top-0 left-0 bg-black opacity-0  group-hover:opacity-50 duration-500 rounded-xl"></span>
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center border-2 border-brand rounded-xl border-dashed opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center  opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
               <div>
                 <h1 className="text-3xl font-bold text-regular pb-5">
                   Noodles
@@ -121,7 +123,7 @@ const ItemCard = () => {
           <div className="relative group">
             <img src={cardpng4} className=" img-spin-slowly rounded-full" />
             <span className="inset-0 absolute top-0 left-0 bg-black opacity-0  group-hover:opacity-50 duration-500 rounded-xl"></span>
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center border-2 border-brand rounded-xl border-dashed opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-center opacity-0 group-hover:opacity-100 duration-500 group-hover:m-5 m-0 cursor-pointer">
               <div>
                 <h1 className="text-3xl font-bold text-regular pb-5">
                   Noodles

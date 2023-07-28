@@ -1,7 +1,7 @@
 import restaurant1 from "../../../assets/homeCardImg/searchbg.jpeg";
-import restaurant2 from "../../../assets/homeCardImg/restaurent.jpg";
+import restaurant2 from "../../../assets/homeCardImg/restaurant.jpeg";
 import restaurant3 from "../../../assets/homeCardImg/card6.jpeg";
-import restaurant4 from "../../../assets/homeCardImg/card2.jpg";
+import restaurant4 from "../../../assets/homeCardImg/cardd2.jpeg";
 import restaurant5 from "../../../assets/homeCardImg/card4.jpg";
 import BrandButton_2 from "../../../components/BrandButton/BrandButton_2";
 import { useContext } from "react";
@@ -62,8 +62,7 @@ const Restaurant = () => {
           magnam nisi itaque, accusantium dolores optio. Nisi tempora, sequi ad
           fugit perspiciatis expedita doloremque, fugiat ea beatae quisquam aut,
           facilis ut officia distinctio! Iste voluptatibus dolore pariatur ut
-          magni distinctio est tempore laudantium, iusto amet repellendus quidem
-          possimus, provident doloremque!
+          magni distinctio est tempore laudantium.
         </p>
         <BrandButton_2 text="GET LOCATION" />
       </div>

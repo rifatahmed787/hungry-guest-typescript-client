@@ -67,12 +67,17 @@ const Navbar = () => {
   };
   const handleSearchClosed = () => setIsSearchOpen(false);
 
-  //sub menu toggle function
+  //toggle function
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  };
 
   //services menu
   const toggleServicesDropdown = () =>
     setServicesDropdownOpen(!servicesDropdownOpen);
   const servicesDropdownClose = () => setServicesDropdownOpen(false);
+
   //shop menu
   const toggleShopDropdown = () => setShopDropdownOpen(!shopDropdownOpen);
   const shopDropdownClose = () => setShopDropdownOpen(false);
@@ -223,7 +228,7 @@ const Navbar = () => {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <li>
+                  <li onClick={() => setPagesDropdownOpen(false)}>
                     <Link
                       title="single service"
                       to="/singleservice"
@@ -236,7 +241,7 @@ const Navbar = () => {
                       {isBangla ? "একটিসেবা" : "Single Service"}
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={() => setPagesDropdownOpen(false)}>
                     <Link
                       title="service list"
                       to="/servicelist"
@@ -249,7 +254,7 @@ const Navbar = () => {
                       {isBangla ? "সেবা তালিকা" : "Service List"}
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={() => setPagesDropdownOpen(false)}>
                     <Link
                       title="service grid"
                       to="/servicegrid"
@@ -299,7 +304,7 @@ const Navbar = () => {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <li>
+                  <li onClick={() => setPagesDropdownOpen(false)}>
                     <Link
                       title="Cart Page"
                       to="/cartpage"
@@ -312,7 +317,7 @@ const Navbar = () => {
                       {isBangla ? "কার্ড পৃষ্ঠা" : "Cart Page"}
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={() => setPagesDropdownOpen(false)}>
                     <Link
                       title="Checkout Page"
                       to="/checkout"
@@ -325,7 +330,7 @@ const Navbar = () => {
                       {isBangla ? "চেকআউট পৃষ্ঠা" : "Checkout Page"}
                     </Link>
                   </li>
-                  <li>
+                  <li onClick={() => setPagesDropdownOpen(false)}>
                     <Link
                       title="My Account"
                       to="/myaccount"
@@ -343,7 +348,7 @@ const Navbar = () => {
             </li>
 
             {/* FAQ  */}
-            <li>
+            <li onClick={() => setPagesDropdownOpen(false)}>
               <Link
                 title="FAQ"
                 to="/faq"
@@ -403,7 +408,7 @@ const Navbar = () => {
               <h1 className="text-3xl text-center py-5  font-display-Poppins text-primary">
                 Delicious Food Ideas
               </h1>
-              <p className="text-center pr-3">
+              <p className="text-center px-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Consequuntur asperiores quidem enim nisi consequatur esse est
                 impedit rerum temporibus nihil!
@@ -646,7 +651,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 z-10 w-full transition duration-500 ${
+        className={`fixed top-0 z-50 w-full transition duration-500 ${
           scrolled
             ? `bg-regular dropdown-menu shadow-lg ${
                 darkMode ? "bg-gradient-backdrop" : ""
@@ -662,9 +667,9 @@ const Navbar = () => {
             className="inline-flex items-center"
           >
             {scrolled ? (
-              <img src={colorLogo} alt="" className="w-40 pl-10 " />
+              <img src={colorLogo} alt="" className="w-40 pl-10 py-1" />
             ) : (
-              <img src={colorLogo1} alt="" className="w-40 pl-10 " />
+              <img src={colorLogo1} alt="" className="w-40 pl-10 py-1" />
             )}
           </Link>
           <ul className="items-center nav-list hidden space-x-8 lg:flex">
@@ -685,63 +690,77 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+
       <div className="fixed z-50 w-full transition py-3 duration-500 lg:hidden pr-5">
-        <div className="flex justify-end mt-3">
+        <div className="flex justify-end relative">
           <button
-            aria-label="Open Menu"
-            title="Open Menu"
-            className="p-2 ml-5 transition duration-200 rounded focus:outline-none focus:shadow-outline
-               bg-brand"
-            onClick={() => setIsMenuOpen(true)}
+            className="w-10 h-6 absolute top-2 right-2 z-10 flex flex-col justify-between"
+            onClick={toggleMenu}
           >
-            <svg className="w-5 text-regular" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
-            </svg>
+            {scrolled ? (
+              <span
+                className={`h-1 w-4/5 bg-brand rounded-2xl ${
+                  isMenuOpen
+                    ? "rotate-45 translate-y-2.5 duration-300"
+                    : "translate-y-0 duration-300"
+                }`}
+              ></span>
+            ) : (
+              <span
+                className={`h-1 w-4/5 bg-white rounded-2xl ${
+                  isMenuOpen
+                    ? "rotate-45 translate-y-2.5 duration-300"
+                    : "translate-y-0 duration-300"
+                }`}
+              ></span>
+            )}
+
+            {/* span two */}
+            {scrolled ? (
+              <span
+                className={`h-1 w-4/5 bg-brand rounded-2xl ${
+                  isMenuOpen ? "opacity-0" : ""
+                }`}
+              ></span>
+            ) : (
+              <span
+                className={`h-1 w-4/5 bg-white rounded-2xl ${
+                  isMenuOpen ? "opacity-0" : ""
+                }`}
+              ></span>
+            )}
+
+            {/* span one */}
+            {scrolled ? (
+              <span
+                className={`h-1 w-4/5 bg-brand rounded-2xl ${
+                  isMenuOpen
+                    ? "-rotate-45 -translate-y-2.5 duration-300"
+                    : "translate-y-0 duration-300"
+                }`}
+              ></span>
+            ) : (
+              <span
+                className={`h-1 w-4/5 bg-white rounded-2xl ${
+                  isMenuOpen
+                    ? "-rotate-45 -translate-y-2.5 duration-300"
+                    : "translate-y-0 duration-300 bg-brand"
+                }`}
+              ></span>
+            )}
           </button>
         </div>
         {isMenuOpen && (
-          <div className="absolute top-5 left-0 w-full bg-secondary h-screen overflow-y-auto dropdown-menu">
-            <div className="p-5 border shadow-sm text-brand hover:text-primary">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <Link
-                    to="/"
-                    aria-label="Company"
-                    title="Company"
-                    className="inline-flex items-center"
-                  >
-                    <img src={colorLogo} alt="" className="w-28" />
-                  </Link>
-                </div>
-                <div>
-                  <button
-                    aria-label="Close Menu"
-                    title="Close Menu"
-                    className="p-2 -mt-2 -mr-2 transition duration-200 rounded focus:bg-gray-200 focus:outline-none focus:shadow-outline "
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <svg className="w-5 text-regular" viewBox="0 0 24 24">
-                      <path
-                        fill="currentColor"
-                        d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+          <div
+            className={`absolute top-5 left-0 w-full pb-10 bg-secondary mt-11  overflow-y-auto  mr-3 ${
+              isMenuOpen
+                ? "dropdown-menu-small"
+                : "-translate-x-full duration-300"
+            }`}
+          >
+            <div className=" shadow-sm text-brand hover:text-primary">
               <nav className="">
-                <ul className="space-y-4">{menuItems}</ul>
+                <ul className="space-y-4 px-4">{menuItems}</ul>
               </nav>
             </div>
           </div>

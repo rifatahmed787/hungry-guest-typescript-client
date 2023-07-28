@@ -4,7 +4,9 @@ const ServiceCard = () => {
   return (
     <div
       className="bg-fixed bg-cover bg-center pb-16"
-      style={{ backgroundImage: "url('/src/assets/SliderImage/slider2.jpg')" }}
+      style={{
+        backgroundImage: "url('/src/assets/SliderImage/slider.jpg')",
+      }}
     >
       <div>
         <p className="text-lg mb-3 pt-16 text-primary font-semibold text-center">
@@ -51,10 +53,7 @@ const ServiceCard = () => {
                 </p>
               </div>
               <div className="px-6 py-4 flex flex-row items-center">
-                <span
-                  href="#"
-                  className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
-                >
+                <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
                   <Icon icon="streamline:interface-time-reset-time-clock-reset-stopwatch-circle-measure-loading" />
                   <span className="ml-1">3 mins read</span>
                 </span>
@@ -96,10 +95,7 @@ const ServiceCard = () => {
                 </p>
               </div>
               <div className="px-6 py-4 flex flex-row items-center">
-                <span
-                  href="#"
-                  className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
-                >
+                <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
                   <Icon icon="streamline:interface-time-reset-time-clock-reset-stopwatch-circle-measure-loading" />
                   <span className="ml-1">6 mins read</span>
                 </span>
@@ -141,10 +137,7 @@ const ServiceCard = () => {
                 </p>
               </div>
               <div className="px-6 py-4 flex flex-row items-center">
-                <span
-                  href="#"
-                  className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
-                >
+                <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
                   <Icon icon="streamline:interface-time-reset-time-clock-reset-stopwatch-circle-measure-loading" />
                   <span className="ml-1">3 mins read</span>
                 </span>
@@ -152,7 +145,7 @@ const ServiceCard = () => {
             </div>
           </div>
           <div className="rounded overflow-hidden shadow-lg">
-            <a href="#">
+            <a href="/">
               <div className="relative">
                 <img
                   className="w-full"
@@ -186,10 +179,7 @@ const ServiceCard = () => {
                 </p>
               </div>
               <div className="px-6 py-4 flex flex-row items-center">
-                <span
-                  href="#"
-                  className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
-                >
+                <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
                   <Icon icon="streamline:interface-time-reset-time-clock-reset-stopwatch-circle-measure-loading" />
                   <span className="ml-1">6 mins read</span>
                 </span>
@@ -197,7 +187,7 @@ const ServiceCard = () => {
             </div>
           </div>
           <div className="rounded overflow-hidden shadow-lg">
-            <a href="#">
+            <a href="/">
               <div className="relative">
                 <img
                   className="w-full"
@@ -210,7 +200,7 @@ const ServiceCard = () => {
                     Photos
                   </div>
                 </a>
-                <a href="!#">
+                <a href="/">
                   <div className="text-sm absolute top-0 right-0 bg-primary px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white  transition duration-500 ease-in-out">
                     <span className="font-bold">20</span>
                     <small>March</small>
@@ -231,10 +221,7 @@ const ServiceCard = () => {
                 </p>
               </div>
               <div className="px-6 py-4 flex flex-row items-center">
-                <span
-                  href="#"
-                  className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
-                >
+                <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
                   <Icon icon="streamline:interface-time-reset-time-clock-reset-stopwatch-circle-measure-loading" />
                   <span className="ml-1">3 mins read</span>
                 </span>
@@ -242,7 +229,7 @@ const ServiceCard = () => {
             </div>
           </div>
           <div className="rounded overflow-hidden shadow-lg">
-            <a href="#">
+            <a href="/">
               <div className="relative">
                 <img
                   className="w-full"
@@ -255,7 +242,7 @@ const ServiceCard = () => {
                     Photos
                   </div>
                 </a>
-                <a href="!#">
+                <a href="/">
                   <div className="text-sm absolute top-0 right-0 bg-primary px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-brand hover: transition duration-500 ease-in-out">
                     <span className="font-bold">15</span>
                     <small>April</small>
@@ -266,7 +253,7 @@ const ServiceCard = () => {
             <div className="bg-white">
               <div className="px-6 py-3">
                 <a
-                  href="#"
+                  href="/"
                   className="font-semibold text-lg inline-block transition duration-500 ease-in-out"
                 >
                   Best Salad Images ever
@@ -276,10 +263,7 @@ const ServiceCard = () => {
                 </p>
               </div>
               <div className="px-6 py-4 flex flex-row items-center">
-                <span
-                  href="#"
-                  className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center"
-                >
+                <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row justify-between items-center">
                   <Icon icon="streamline:interface-time-reset-time-clock-reset-stopwatch-circle-measure-loading" />
                   <span className="ml-1">6 mins read</span>
                 </span>

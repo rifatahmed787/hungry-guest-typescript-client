@@ -1,14 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-// eslint-disable-next-line react/prop-types
-const ServiceListCard = ({ foodCard }) => {
-  // eslint-disable-next-line react/prop-types
+
+interface FoodCard {
+  image: string;
+  price: number;
+  rating: number;
+}
+
+const ServiceListCard: React.FC<{ foodCard: FoodCard }> = ({ foodCard }) => {
   const { image, price, rating } = foodCard;
   return (
     <>
       <div className="rounded overflow-hidden shadow-lg">
-        <a href="#" />
         <div className="relative">
-          <a href="#">
+          <a href="/">
             <img
               className=" w-[100%] h-60 aspect-auto"
               src={image}
@@ -16,12 +20,12 @@ const ServiceListCard = ({ foodCard }) => {
             />
             <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25" />
           </a>
-          <a href="#!">
+          <a href="/">
             <div className="absolute bottom-0 left-0 bg-brand px-4 py-2 text-white text-sm">
               {rating}
             </div>
           </a>
-          <a href="!#">
+          <a href="/">
             <div className="absolute top-0 right-0 px-4  bg-gradient-to-tr from-green-500 to-green-500 w-16 h-16  rounded-full shadow-2xl shadow-green-400 border-white  border-dashed border-2  flex justify-center items-center mt-3 mr-3 ">
               <div>
                 <h1 className="text-white text-2xl">{price}</h1>
@@ -31,17 +35,14 @@ const ServiceListCard = ({ foodCard }) => {
         </div>
         <div className="px-6 py-4">
           <a
-            href="#"
+            href="/"
             className="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out"
           >
             Best View in Newyork City
           </a>
         </div>
         <div className="px-6 py-4 flex flex-row items-center">
-          <span
-            href="#"
-            className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center"
-          >
+          <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
             <svg
               height="13px"
               width="13px"
@@ -52,7 +53,6 @@ const ServiceListCard = ({ foodCard }) => {
               x="0px"
               y="0px"
               viewBox="0 0 512 512"
-              style={{ enableBackground: "new 0 0 512 512" }}
               xmlSpace="preserve"
             >
               <g>

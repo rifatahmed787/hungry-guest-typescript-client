@@ -25,7 +25,7 @@ const ServicesSingleTabs = () => {
             <Tab>Information</Tab>
           </TabList>
 
-          <TabPanel className="my-16 px-3 md:pl-16 md:mx-28">
+          <TabPanel className="my-16 px-3 md:pl-8 md:mx-28">
             <h2 className="text-lg  flex active-tab-content w-11/12 md:w-4/5 md:ml-44  pb-16 text-center md:text-left">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
               quam, pariatur facere nihil sit voluptatem, tenetur nam fugiat,

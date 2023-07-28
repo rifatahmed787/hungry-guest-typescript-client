@@ -15,7 +15,7 @@ const About = () => {
           className="w-full bg-no-repeat  bg-cover relative"
         />
 
-        <div className="absolute top-16 text-regular md:top-32 lg:top-1/3 left-32 md:left-1/3 lg:left-[42%] z-10">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center z-10">
           <h1 className="error font-bold  lg:text-5xl text-4xl text-white">
             About Us
           </h1>

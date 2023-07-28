@@ -1,11 +1,46 @@
 import "./CheckOutPage.css";
+import chekout from "../../../../assets/sectionBanner/checkout.jpeg";
+import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
+import { useContext } from "react";
+import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
 
 const CheckOutPage = () => {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div>
-      <div className="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
-        <a href="#" className="text-2xl font-bold text-gray-800">
-          sneekpeeks
+    <div className={`pb-10 ${darkMode ? "bg-black text-white" : ""}`}>
+      <div>
+        <img
+          src={chekout}
+          alt=""
+          className="w-full h-[165px] md:h-[350px] lg:h-[570px] relative"
+        />
+        <span className="absolute inset-0 h-[165px] md:h-[350px] lg:h-[570px] bg-black opacity-60 top-0 left-0"></span>
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center">
+          <h1 className="font-bold lg:text-5xl text-white text-3xl text-brand2">
+            Check Out
+          </h1>
+          <p className="md:text-lg flex justify-center items-center text-white font-bold mt-5 text-base">
+            <Link to={"/"} className="hover:-translate-x-1 duration-300">
+              <span>Home</span>
+            </Link>
+            <Icon
+              icon="mdi:simple-icons"
+              className="mx-2 font-bold"
+              width={30}
+            />
+            About Us
+          </p>
+        </div>
+      </div>
+
+      <div
+        className={`flex flex-col items-center border-b py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32 mt-16 mx-8 ${
+          darkMode ? "bg-gradient-backdrop rounded-t-md" : "bg-white"
+        }`}
+      >
+        <a href="#" className="text-2xl font-bold text-primary">
+          CheckOut
         </a>
         <div className="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
           <div className="relative">
@@ -30,7 +65,7 @@ const CheckOutPage = () => {
                     />
                   </svg>
                 </a>
-                <span className="font-semibold text-gray-900">Shop</span>
+                <span className="font-semibold text-primary">Shop</span>
               </li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +88,7 @@ const CheckOutPage = () => {
                 >
                   2
                 </a>
-                <span className="font-semibold text-gray-900">Shipping</span>
+                <span className="font-semibold text-primary">Shipping</span>
               </li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,20 +111,29 @@ const CheckOutPage = () => {
                 >
                   3
                 </a>
-                <span className="font-semibold text-gray-500">Payment</span>
+                <span className="font-semibold text-primary">Payment</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+
+      <div
+        className={`grid sm:px-10 lg:grid-cols-2 py-5 mb-10 mx-8 lg:px-20 xl:px-32 ${
+          darkMode ? "bg-gradient-backdrop rounded-md" : ""
+        }`}
+      >
         <div className="px-4 pt-8">
           <p className="text-xl font-medium">Order Summary</p>
           <p className="text-gray-400">
             Check your items. And select a suitable shipping method.
           </p>
-          <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-            <div className="flex flex-col rounded-lg bg-white sm:flex-row">
+          <div
+            className={`mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6 ${
+              darkMode ? "bg-gradient-backdrop text-white" : ""
+            }`}
+          >
+            <div className="flex flex-col rounded-lg  sm:flex-row">
               <img
                 className="m-2 h-24 w-28 rounded-md border object-cover object-center"
                 src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
@@ -103,7 +147,7 @@ const CheckOutPage = () => {
                 <p className="text-lg font-bold">$138.99</p>
               </div>
             </div>
-            <div className="flex flex-col rounded-lg bg-white sm:flex-row">
+            <div className="flex flex-col rounded-lg  sm:flex-row">
               <img
                 className="m-2 h-24 w-28 rounded-md border object-cover object-center"
                 src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
@@ -175,7 +219,12 @@ const CheckOutPage = () => {
             </div>
           </form>
         </div>
-        <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+
+        <div
+          className={`mt-10  px-4 pt-8 lg:mt-0 ${
+            darkMode ? "bg-gradient-backdrop text-white" : "bg-gray-50"
+          }`}
+        >
           <p className="text-xl font-medium">Payment Details</p>
           <p className="text-gray-400">
             Complete your order by providing your payment details.
@@ -325,20 +374,20 @@ const CheckOutPage = () => {
 
             <div className="mt-6 border-t border-b py-2">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-900">Subtotal</p>
-                <p className="font-semibold text-gray-900">$399.00</p>
+                <p className="text-sm font-medium text-primary">Subtotal</p>
+                <p className="font-semibold text-primary">$399.00</p>
               </div>
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-900">Shipping</p>
-                <p className="font-semibold text-gray-900">$8.00</p>
+                <p className="text-sm font-medium text-primary">Shipping</p>
+                <p className="font-semibold text-primary">$8.00</p>
               </div>
             </div>
             <div className="mt-6 flex items-center justify-between">
-              <p className="text-sm font-medium text-gray-900">Total</p>
-              <p className="text-2xl font-semibold text-gray-900">$408.00</p>
+              <p className="text-sm font-medium text-primary">Total</p>
+              <p className="text-2xl font-semibold text-primary">$408.00</p>
             </div>
           </div>
-          <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
+          <button className="mt-4 mb-8 w-full rounded-md bg-primary hover:bg-brand duration-500 px-6 py-3 font-medium text-white">
             Place Order
           </button>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import image from "../../assets/homeCardImg/card2.jpg";
+import image from "../../assets/homeCardImg/cardd2.jpeg";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
@@ -7,7 +7,7 @@ import servicebanner from "../../assets/homeCardImg/home (5).jpeg";
 import { DarkModeContext } from "../../components/DarkModeContext/DarkModeContext";
 
 const BookTable = () => {
-  const { darkMode, isBangla, toggoleBangla } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
@@ -30,7 +30,7 @@ const BookTable = () => {
           className="w-full h-[165px] md:h-[350px] lg:h-[570px] relative"
         />
         <span className="absolute inset-0 h-[165px] md:h-[350px] lg:h-[570px] bg-black opacity-70 top-0 left-0"></span>
-        <div className="absolute top-16 md:top-32 lg:top-1/3 left-28 md:left-1/3 lg:left-[38%]">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center">
           <h1 className="error font-bold lg:text-5xl text-white text-3xl text-brand2">
             Booking Table
           </h1>

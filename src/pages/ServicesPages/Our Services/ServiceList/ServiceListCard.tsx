@@ -1,5 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-const ServiceListCard = ({ product }) => {
+interface product {
+  image_url: string;
+  name: string;
+  price: number;
+  description: string;
+}
+
+const ServiceListCard: React.FC<{ product: product }> = ({ product }) => {
   console.log(product);
   return (
     <div>

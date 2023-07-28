@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
+
 import { Link } from "react-router-dom";
 import bannerimage from "../../../assets/homeCardImg/faq1.jpg";
 import { Icon } from "@iconify/react";
@@ -6,13 +7,14 @@ import { useContext, useState } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 
 const Faq = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { darkMode } = useContext(DarkModeContext);
 
-  const toggleAccordion = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  const toggleAccordion = (index: number | null) => {
+    setActiveIndex((prevIndex: number | null) =>
+      prevIndex === index ? null : index
+    );
   };
-
   const faqData = [
     {
       question: "How can I play for my order?",
@@ -73,7 +75,7 @@ const Faq = () => {
           />
         </div>
 
-        <div className="absolute top-16 md:top-32 lg:top-1/3 left-28 md:left-[20%] lg:left-[30%]">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center">
           <h1 className="font-bold lg:text-5xl text-white text-3xl text-brand2">
             Frequently Ask Question
           </h1>

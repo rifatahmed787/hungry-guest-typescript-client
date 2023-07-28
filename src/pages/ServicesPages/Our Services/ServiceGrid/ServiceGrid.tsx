@@ -1,26 +1,28 @@
-import food1 from "../../../../assets/homeCardImg/card1.jpg";
-import food10 from "../../../../assets/homeCardImg/card2.jpg";
-import food11 from "../../../../assets/homeCardImg/card1.jpg";
+import food1 from "../../../../assets/homeCardImg/cardd1.jpeg";
+import food10 from "../../../../assets/homeCardImg/card6.jpeg";
+import food11 from "../../../../assets/homeCardImg/cardd1.jpeg";
 import food12 from "../../../../assets/homeCardImg/card4.jpg";
 import food2 from "../../../../assets/homeCardImg/card5.jpg";
 import food3 from "../../../../assets/homeCardImg/card6.jpeg";
-import food4 from "../../../../assets/homeCardImg/card7.jpg";
-import food5 from "../../../../assets/homeCardImg/card1.jpg";
+import food4 from "../../../../assets/homeCardImg/card6.jpeg";
+import food5 from "../../../../assets/homeCardImg/cardd1.jpeg";
 import food6 from "../../../../assets/homeCardImg/card6.jpeg";
 import food7 from "../../../../assets/homeCardImg/card4.jpg";
 import food8 from "../../../../assets/homeCardImg/card5.jpg";
 import food9 from "../../../../assets/homeCardImg/card6.jpeg";
-import ServiceListCard from "./ServiceGridCard.js";
-import servicebanner from "../../../../assets/sectionBanner/serviceList.jpg";
+
+import servicebanner from "../../../../assets/sectionBanner/serviceList.jpeg";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
 import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
+import { serviceGrid } from "../../../../types/types";
+import ServiceListCard from "./ServiceGridCard";
 
 const ServiceList = () => {
   const { darkMode } = useContext(DarkModeContext);
 
-  const FoodCards = [
+  const FoodCards: serviceGrid[] = [
     {
       id: 1,
       title: "Pizza",
@@ -116,9 +118,9 @@ const ServiceList = () => {
           className="w-full h-[165px] md:h-[350px] lg:h-[570px] relative"
         />
         <span className="absolute inset-0 h-[165px] md:h-[350px] lg:h-[570px] bg-black opacity-50 top-0 left-0"></span>
-        <div className="absolute top-16 md:top-32 lg:top-1/3 left-28 md:left-1/3 lg:left-[38%]">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center">
           <h1 className="font-bold lg:text-5xl text-white text-3xl text-brand2">
-            Single Service
+            Service Grid
           </h1>
           <p className="md:text-lg flex justify-center items-center text-white font-bold mt-5 text-base">
             <Link to={"/"} className="hover:-translate-x-1 duration-300">

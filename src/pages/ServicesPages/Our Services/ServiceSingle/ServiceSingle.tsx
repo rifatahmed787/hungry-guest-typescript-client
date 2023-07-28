@@ -15,7 +15,7 @@ const ServiceSingle = () => {
     <div className={`pb-16  ${darkMode ? "bg-black text-white" : ""}`}>
       <div className="relative after:absolute after:content-normal after:bg-black after:w-full after:h-full after:top-0 after:left-0 after:opacity-40">
         <img src={serviceBanner} alt="" className="w-full " />
-        <div className="absolute bo top-16 md:top-32 z-10 lg:top-1/3 left-28 md:left-[40%] lg:left-[38%]z-">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center z-10">
           <h1 className="font-bold lg:text-5xl text-white text-3xl text-brand2 error">
             Single Service
           </h1>

@@ -7,12 +7,13 @@ import servicebanner from "../../../../assets/homeCardImg/home (1).jpeg";
 import { Icon } from "@iconify/react";
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
+import { categories, serviceList } from "../../../../types/types";
 
 const ServiceList = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<categories[]>([]);
   const { darkMode } = useContext(DarkModeContext);
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<serviceList[]>([]);
 
   //fetching all the items
   useEffect(() => {
@@ -39,7 +40,7 @@ const ServiceList = () => {
   };
 
   //fetching and filtering items by category
-  const fetchItemsByCategory = async (categoryId) => {
+  const fetchItemsByCategory = async (categoryId: string) => {
     try {
       const response = await fetch("serviceList.json");
       const data = await response.json();
@@ -48,7 +49,9 @@ const ServiceList = () => {
         filteredItems = data;
       } else {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        filteredItems = data.filter((item) => item.category_id === categoryId);
+        filteredItems = data.filter(
+          (item: { category_id: string }) => item.category_id === categoryId
+        );
       }
 
       setItems(filteredItems);
@@ -58,7 +61,7 @@ const ServiceList = () => {
   };
 
   //handling category items
-  const handleCategoryClick = (categoryId) => {
+  const handleCategoryClick = (categoryId: string) => {
     fetchItemsByCategory(categoryId);
   };
 
@@ -72,7 +75,7 @@ const ServiceList = () => {
           className="w-full h-[165px] md:h-[350px] lg:h-[570px] relative"
         />
         <span className="absolute inset-0 h-[165px] md:h-[350px] lg:h-[570px] bg-black opacity-60 top-0 left-0"></span>
-        <div className="absolute top-16 md:top-32 lg:top-1/3 left-28 md:left-1/3 lg:left-[38%]">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center">
           <h1 className="font-bold lg:text-5xl text-white text-3xl text-brand2">
             Service List
           </h1>

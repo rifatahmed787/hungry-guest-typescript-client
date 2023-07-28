@@ -1,7 +1,7 @@
 import card1 from "../../../assets/cardImage/card1.jpg";
 import card2 from "../../../assets/cardImage/card2.jpg";
 import card3 from "../../../assets/cardImage/card3.jpg";
-import card4 from "../../../assets/cardImage/card4.jpg";
+import card4 from "../../../assets/cardImage/card4.jpeg";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,7 +20,7 @@ const ServiceSlider = () => {
     <div
       className="mx-5 bg-fixed bg-cover bg-center py-32"
       style={{
-        backgroundImage: "url('/src/assets/sectionBanner/serviceList.jpg')",
+        backgroundImage: "url('/src/assets/sectionBanner/serviceList.jpeg')",
       }}
     >
       <Swiper

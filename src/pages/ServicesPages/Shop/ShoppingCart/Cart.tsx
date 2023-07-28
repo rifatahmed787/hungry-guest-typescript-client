@@ -6,6 +6,7 @@ import cart from "../../../../assets/sectionBanner/banner_1.jpg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
+import BrandButton from "../../../../components/BrandButton/BrandButton";
 
 const Cart = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -18,9 +19,9 @@ const Cart = () => {
           className="w-full h-[165px] md:h-[350px] lg:h-[570px] relative"
         />
         <span className="absolute inset-0 h-[165px] md:h-[350px] lg:h-[570px] bg-black opacity-60 top-0 left-0"></span>
-        <div className="absolute top-16 md:top-32 lg:top-1/3 left-28 md:left-1/3 lg:left-[38%]">
+        <div className="absolute top-16 md:top-32 lg:top-1/3 left-0 right-0 text-center">
           <h1 className="font-bold lg:text-5xl text-white text-3xl text-brand2">
-            Service List
+            Cart
           </h1>
           <p className="md:text-lg flex justify-center items-center text-white font-bold mt-5 text-base">
             <Link to={"/"} className="hover:-translate-x-1 duration-300">
@@ -45,9 +46,10 @@ const Cart = () => {
         }`}
       >
         <div className="container mx-auto mt-10">
-          <div className="flex shadow-md my-10">
+          <div className="flex flex-col lg:flex-row justify-center items-center shadow-md my-10">
+            {/* cart item shows here  */}
             <div
-              className={`w-3/4 px-10 py-10 ${
+              className={`w-11/12  lg:w-3/4 px-10 py-10 ${
                 darkMode
                   ? "bg-gradient-backdrop text-white"
                   : "bg-white text-black"
@@ -73,7 +75,7 @@ const Cart = () => {
               </div>
 
               <div
-                className={`flex items-center  -mx-8 px-6 py-5 ${
+                className={`flex items-center  -mx-8 px-1 lg:px-6 py-5 ${
                   darkMode ? "hover:bg-none" : "hover:bg-gray-100"
                 }`}
               >
@@ -174,10 +176,10 @@ const Cart = () => {
 
               <Link
                 to="/"
-                className="flex font-semibold text-indigo-600 text-sm mt-10"
+                className="flex font-semibold text-primary text-sm mt-10"
               >
                 <svg
-                  className="fill-current mr-2 text-indigo-600 w-4"
+                  className="fill-current mr-2 text-primary w-4"
                   viewBox="0 0 448 512"
                 >
                   <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
@@ -186,7 +188,8 @@ const Cart = () => {
               </Link>
             </div>
 
-            <div id="summary" className="w-1/4 px-8 py-10">
+            {/* order summary starts from here */}
+            <div id="summary" className="w-11/12 lg:w-1/4 px-8 py-10">
               <h1 className="font-semibold text-2xl border-b pb-8">
                 Order Summary
               </h1>
@@ -216,15 +219,14 @@ const Cart = () => {
                   className="p-2 text-sm w-full"
                 />
               </div>
-              <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">
-                Apply
-              </button>
+              {/* button for apply  */}
+              <BrandButton text="Apply" />
               <div className="border-t mt-8">
                 <div className="flex font-semibold justify-between py-6 text-sm uppercase">
                   <span>Total cost</span>
                   <span>$600</span>
                 </div>
-                <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+                <button className="bg-primary hover:bg-brand duration-500 py-3 text-sm text-white uppercase w-full">
                   Checkout
                 </button>
               </div>

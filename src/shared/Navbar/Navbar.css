@@ -1,3 +1,21 @@
+@keyframes dropdown-small {
+  0% {
+    transform: translateX(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.dropdown-menu-small {
+  animation-name: dropdown-small;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+}
+
+/* for large devices */
 @keyframes dropdown {
   0% {
     transform: translateY(-25px);
@@ -13,69 +31,4 @@
   animation-name: dropdown;
   animation-duration: 0.8s;
   animation-timing-function: ease-in-out;
-}
-
-/* small device navbar animation */
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(-2%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes shrink {
-  0% {
-    width: 95%;
-  }
-  100% {
-    width: 90%;
-  }
-}
-
-/* hamburger menu manage css */
-
-/* ALL */
-
-.hamburger .line {
-  display: block;
-  margin: 5px auto;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-
-/* ONE */
-
-#hamburger-1.is-active .line:nth-child(2) {
-  opacity: 0;
-}
-
-#hamburger-1.is-active .line:nth-child(1) {
-  -webkit-transform: translateY(11px) rotate(45deg);
-  -ms-transform: translateY(11px) rotate(45deg);
-  -o-transform: translateY(11px) rotate(45deg);
-  transform: translateY(11px) rotate(45deg);
-}
-
-#hamburger-1.is-active .line:nth-child(3) {
-  -webkit-transform: translateY(-5px) rotate(-45deg);
-  -ms-transform: translateY(-5px) rotate(-45deg);
-  -o-transform: translateY(-5px) rotate(-45deg);
-  transform: translateY(-5px) rotate(-45deg);
 }
