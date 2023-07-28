@@ -5,7 +5,7 @@ const ServiceCard = () => {
     <div
       className="bg-fixed bg-cover bg-center pb-16"
       style={{
-        backgroundImage: "url('/src/assets/SliderImage/slider.jpg')",
+        backgroundImage: "url('https://i.ibb.co/R0pqwyb/slider.jpg')",
       }}
     >
       <div>

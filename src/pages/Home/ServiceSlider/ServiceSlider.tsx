@@ -20,7 +20,7 @@ const ServiceSlider = () => {
     <div
       className="mx-5 bg-fixed bg-cover bg-center py-32"
       style={{
-        backgroundImage: "url('/src/assets/sectionBanner/serviceList.jpeg')",
+        backgroundImage: "url('https://i.ibb.co/XYyrsCB/service-List.jpg')",
       }}
     >
       <Swiper

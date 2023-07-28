@@ -40,7 +40,7 @@ const ShefSlider = () => {
     <div
       className="mx-auto max-w-screen-2xl bg-fixed bg-cover bg-center"
       style={{
-        backgroundImage: "url('/src/assets/SliderImage/sliderr2.jpg')",
+        backgroundImage: "url('https://i.ibb.co/0KSfv2F/sliderr2.jpg')",
       }}
     >
       <div>
