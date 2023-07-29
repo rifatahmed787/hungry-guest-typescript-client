@@ -44,7 +44,7 @@ const Contact = () => {
       </div>
 
       <div
-        className={` grid justify-items-center items-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 py-10 mt-10 mx-3 ${
+        className={` grid justify-items-center items-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 py-10 mt-10 mx-3 md:mx-8  ${
           darkMode ? "bg-gradient-backdrop text-white rounded-md" : ""
         }`}
       >
@@ -59,11 +59,17 @@ const Contact = () => {
             }`}
           >
             <p className="bg-brand rounded-lg ">
-              <img src={png1} alt="" className="w-16 h-16  p-3" />
+              <img
+                src={png1}
+                alt=""
+                className="w-10 h-10 md:w-16 md:h-16  p-3"
+              />
             </p>
             <div>
-              <h1 className="text-3xl font-bold text-brand">Our Address</h1>
-              <p className="text-lg font-semibold text-gray-500">
+              <h1 className="text-xl md:text-3xl font-bold text-brand">
+                Our Address
+              </h1>
+              <p className="text-base md:text-lg font-semibold text-gray-500">
                 Dhaka, Bangladesh
               </p>
             </div>
@@ -76,12 +82,18 @@ const Contact = () => {
               darkMode ? "bg-gradient-backdrop text-white" : "bg-white"
             }`}
           >
-            <p className="bg-brand rounded-lg ">
-              <img src={png2} alt="" className="w-16 h-16  p-3" />
+            <p className="text-xl md:text-3xl font-bold bg-brand rounded-lg text-brand">
+              <img
+                src={png2}
+                alt=""
+                className="w-10 h-10 md:w-16 md:h-16  p-3"
+              />
             </p>
             <div>
-              <h1 className="text-3xl font-bold text-brand">Our Phone</h1>
-              <p className="text-lg font-semibold text-gray-500">
+              <h1 className="text-xl md:text-3xl font-bold text-brand">
+                Our Phone
+              </h1>
+              <p className="text-base md:text-lg font-semibold text-gray-500">
                 +88 01945518927
               </p>
             </div>
@@ -93,12 +105,18 @@ const Contact = () => {
               darkMode ? "bg-gradient-backdrop text-white" : "bg-white"
             }`}
           >
-            <p className="bg-brand rounded-lg w-16 h-16">
-              <img src={png3} alt="" className="  p-3" />
+            <p className="bg-brand rounded-lg ">
+              <img
+                src={png3}
+                alt=""
+                className="w-10 h-10 md:w-16 md:h-16  p-3"
+              />
             </p>
             <div>
-              <h1 className="text-3xl font-bold px-5 text-brand">Our Email</h1>
-              <p className="text-lg font-semibold text-gray-500">
+              <h1 className="text-xl md:text-3xl font-bold text-brand">
+                Our Email
+              </h1>
+              <p className="text-base md:text-lg font-semibold text-gray-500">
                 letstalk@weerodigital.com
               </p>
             </div>
