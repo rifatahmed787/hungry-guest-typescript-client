@@ -53,7 +53,11 @@ const Contact = () => {
           target="_blank"
           className="group"
         >
-          <div className="flex items-center border border-white group-hover:border-brand duration-300 gap-4  bg-white shadow py-10 px-10 rounded-lg brand">
+          <div
+            className={`flex items-center border border-white group-hover:border-brand duration-300 gap-4   shadow py-10 px-10 rounded-lg brand ${
+              darkMode ? "bg-gradient-backdrop text-white" : "bg-white"
+            }`}
+          >
             <p className="bg-brand rounded-lg ">
               <img src={png1} alt="" className="w-16 h-16  p-3" />
             </p>
@@ -67,7 +71,11 @@ const Contact = () => {
         </a>
         {/* tel:+4733378901" */}
         <a href="tel:+88 01945 518927" className="group ">
-          <div className="flex items-center gap-4 border border-white group-hover:border-brand duration-300 bg-white shadow py-10 px-12 rounded-lg brand">
+          <div
+            className={`flex items-center border border-white group-hover:border-brand duration-300 gap-4   shadow py-10 px-10 rounded-lg brand ${
+              darkMode ? "bg-gradient-backdrop text-white" : "bg-white"
+            }`}
+          >
             <p className="bg-brand rounded-lg ">
               <img src={png2} alt="" className="w-16 h-16  p-3" />
             </p>
@@ -80,7 +88,11 @@ const Contact = () => {
           </div>
         </a>
         <a href="mailto: abc@example.com" className="group">
-          <div className="flex items-center border border-white group-hover:border-brand duration-300 gap-4 bg-white shadow py-10 px-5 rounded-lg brand">
+          <div
+            className={`flex items-center border border-white group-hover:border-brand duration-300 gap-4   shadow py-10 px-10 rounded-lg brand ${
+              darkMode ? "bg-gradient-backdrop text-white" : "bg-white"
+            }`}
+          >
             <p className="bg-brand rounded-lg w-16 h-16">
               <img src={png3} alt="" className="  p-3" />
             </p>

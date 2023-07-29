@@ -558,6 +558,8 @@ const Navbar = () => {
       {/* ......................contact dropdown ............ */}
       <li
         className={`font-bold ${
+          location.pathname === "/contact" ? "border-b-2 border-primary" : ""
+        } ${
           scrolled
             ? `${
                 darkMode
