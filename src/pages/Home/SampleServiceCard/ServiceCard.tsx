@@ -5,17 +5,19 @@ const ServiceCard = () => {
     <div
       className="bg-fixed bg-cover bg-center pb-16"
       style={{
-        backgroundImage: "url('https://i.ibb.co/R0pqwyb/slider.jpg')",
+        backgroundImage: "url('https://i.ibb.co/C2NbgtC/menu.jpg')",
       }}
+
+      // https://i.ibb.co/R0pqwyb/slider.jpg
     >
-      <div>
+      {/* <div>
         <p className="text-lg mb-3 pt-16 text-primary font-semibold text-center">
           New Menus
         </p>
         <h1 className="text-3xl lg:text-5xl text-regular text-center font-bold font-display-Poppins">
           View Our Menus
         </h1>
-      </div>
+      </div> */}
       <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
           <div className="rounded overflow-hidden shadow-lg">

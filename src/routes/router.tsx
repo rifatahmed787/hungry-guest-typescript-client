@@ -11,6 +11,7 @@ import ServiceGrid from "../pages/ServicesPages/Our Services/ServiceGrid/Service
 import Contact from "../pages/ContactPage/Contact";
 import CheckOutPage from "../pages/ServicesPages/Shop/ChackOut/CheckOutPage";
 import Cart from "../pages/ServicesPages/Shop/ShoppingCart/Cart";
+import Signup from "../pages/Auth/Signup/Signup";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },
