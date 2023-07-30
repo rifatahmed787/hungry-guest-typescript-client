@@ -10,8 +10,9 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<Register>();
-  const onSubmit: SubmitHandler<Register> = (data) => console.log(data);
   const [loading, setLoading] = useState(false);
+
+  const onSubmit: SubmitHandler<Register> = (data) => console.log(data);
 
   return (
     <div className={`pb-10 ${darkMode ? "bg-black" : ""}`}>

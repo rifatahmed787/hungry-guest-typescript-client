@@ -36,3 +36,9 @@ export type Register = {
   password: string;
   image: string;
 };
+
+//user login types
+export type LoginUser = {
+  email: string;
+  password: string;
+};
