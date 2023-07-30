@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 import Spinner from "../../../components/Spinner/Spinner";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -23,7 +24,11 @@ const Signup = () => {
           </h1>
         </div>
       </div>
-      <div className=" small-width bg-[#F3F4F6] dark:bg-black dark:border p-7 mt-16 shadow-2xl border border-orange-400 rounded-xl  mx-auto lg:w-1/3 md:w-2/5 sm:w-11/12">
+      <div
+        className={`small-width   p-7 my-16 shadow-2xl border border-orange-400 rounded-xl  mx-auto lg:w-1/3 md:w-2/5 sm:w-11/12 ${
+          darkMode ? "bg-gradient-backdrop" : "bg-[#F3F4F6]"
+        }`}
+      >
         <h2 className="text-2xl font-bold text-orange-500 text-center ">
           Sign up
         </h2>
@@ -39,15 +44,16 @@ const Signup = () => {
             />
             <label
               htmlFor="floating_first_name"
-              className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 peer-focus:px-2 ${
+              className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 peer-focus:px-2  ${
                 darkMode
-                  ? "peer-focus:bg-gradient-backdrop"
+                  ? "peer-focus:bg-gradient-backdrop text-white peer-focus:text-white"
                   : "peer-focus:bg-white"
               }`}
             >
               First name
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
@@ -59,9 +65,9 @@ const Signup = () => {
             />
             <label
               htmlFor="floating_first_name"
-              className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 peer-focus:px-2 ${
+              className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 peer-focus:px-2  ${
                 darkMode
-                  ? "peer-focus:bg-gradient-backdrop"
+                  ? "peer-focus:bg-gradient-backdrop text-white peer-focus:text-white"
                   : "peer-focus:bg-white"
               }`}
             >
@@ -69,7 +75,27 @@ const Signup = () => {
             </label>
           </div>
 
-          <div className="border-2 border-primary text-gray-500 flex justify-between px-2 py-2 rounded-lg">
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="email"
+              id="floating_email"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2"
+              placeholder=" "
+              {...register("email")}
+              required
+            />
+            <label
+              htmlFor="floating_email"
+              className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 peer-focus:px-2  ${
+                darkMode
+                  ? "peer-focus:bg-gradient-backdrop text-white peer-focus:text-white"
+                  : "peer-focus:bg-white"
+              }`}
+            >
+              Email
+            </label>
+          </div>
+          {/* <div className="border-2 border-primary text-gray-500 flex justify-between px-2 py-2 rounded-lg">
             <label className="pl-2 ">Gender</label>
             <select
               {...register("gender")}
@@ -79,7 +105,29 @@ const Signup = () => {
               <option value="male">male</option>
               <option value="other">other</option>
             </select>
+          </div> */}
+
+          <div className="relative z-0 w-full mb-6 group">
+            <input
+              type="password"
+              id="floating_password"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2"
+              placeholder=" "
+              {...register("password")}
+              required
+            />
+            <label
+              htmlFor="floating_password"
+              className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 peer-focus:px-2  ${
+                darkMode
+                  ? "peer-focus:bg-gradient-backdrop text-white peer-focus:text-white"
+                  : "peer-focus:bg-white"
+              }`}
+            >
+              Password
+            </label>
           </div>
+
           <div>
             {loading ? (
               <button className="btn  bg-primary hover:bg-brand duration-500 w-full mt-5 border-none">
@@ -87,13 +135,19 @@ const Signup = () => {
               </button>
             ) : (
               <input
-                className="btn  bg-primary hover:bg-brand duration-500 w-full mt-5 border-none"
+                className="btn py-3 text-white rounded-lg cursor-pointer bg-primary hover:bg-brand duration-500 w-full mt-5 border-none"
                 value="Sign up"
                 type="submit"
               />
             )}
           </div>
         </form>
+        <p className={`mt-3 text-center ${darkMode ? "text-white" : ""}`}>
+          Already have an account Please{" "}
+          <Link className="text-primary  link hover:text-brand" to="/login">
+            Log in
+          </Link>
+        </p>
       </div>
     </div>
   );
