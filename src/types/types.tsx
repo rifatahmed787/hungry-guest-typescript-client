@@ -29,11 +29,11 @@ export type categories = {
 
 // user register types
 export type Register = {
-  Name: string;
+  userName: string;
   gender?: GenderEnum;
   email: string;
   password: string;
-  // image: string | undefined;
+  image: string | undefined;
 };
 
 //user login types

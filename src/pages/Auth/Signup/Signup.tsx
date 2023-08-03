@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Register } from "../../../types/types";
@@ -6,13 +7,36 @@ import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 import Spinner from "../../../components/Spinner/Spinner";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<Register>();
   const [loading, setLoading] = useState(false);
 
-  const onSubmit: SubmitHandler<Register> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Register> = async (data) => {
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "http://localhost:5000/api/v1/auth/register",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Registration successful:", response?.data);
+      // Handle success...
+    } catch (error) {
+      console.error("Registration failed:", error);
+      // Display an error message or notification to the user
+      // For example:
+      // setErrorMsg("Failed to register. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className={`pb-10 ${darkMode ? "bg-black" : ""}`}>
@@ -26,7 +50,7 @@ const Signup = () => {
         </div>
       </div>
       <div
-        className={`small-width   p-7 my-16 shadow-2xl border border-orange-400 rounded-xl  mx-auto lg:w-1/3 md:w-2/5 sm:w-11/12 ${
+        className={`small-width mx-5  p-7 my-16 shadow-2xl border border-orange-400 rounded-xl  md:mx-auto lg:w-1/3 md:w-2/5 sm:w-11/12 ${
           darkMode ? "bg-gradient-backdrop" : "bg-[#F3F4F6]"
         }`}
       >
@@ -34,13 +58,13 @@ const Signup = () => {
           Sign up
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="py-5">
-          {/* <div className="relative z-0 w-full mb-6 group">
+          <div className="relative z-0 w-full mb-6 group">
             <input
-              type="text"
+              type="file"
               id="floating_first_name"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2"
               placeholder=" "
-              {...register("firstName")}
+              {...register("image")}
               required
             />
             <label
@@ -51,9 +75,9 @@ const Signup = () => {
                   : "bg-[#F3F4F6]"
               }`}
             >
-              First name
+              Profile Image
             </label>
-          </div> */}
+          </div>
 
           <div className="relative z-0 w-full mb-6 group">
             <input
@@ -63,7 +87,7 @@ const Signup = () => {
                 darkMode ? "text-white" : "text-gray-900"
               }`}
               placeholder=" "
-              {...register("Name")}
+              {...register("userName")}
               required
             />
             <label
@@ -74,7 +98,7 @@ const Signup = () => {
                   : "bg-[#F3F4F6]"
               }`}
             >
-              Last name
+              Name
             </label>
           </div>
 
@@ -137,7 +161,7 @@ const Signup = () => {
 
           <div>
             {loading ? (
-              <button className="btn  bg-primary hover:bg-brand duration-500 w-full mt-5 border-none">
+              <button className="btn py-3 rounded-lg bg-primary hover:bg-brand duration-500 w-full mt-5 border-none">
                 <Spinner />
               </button>
             ) : (
