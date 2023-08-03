@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState, useContext } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
@@ -7,13 +8,38 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Spinner from "../../../components/Spinner/Spinner";
 import { Link } from "react-router-dom";
 import { LoginUser } from "../../../types/types";
+import axios from "axios";
+import { toast } from "react-hot-toast/headless";
+import { AxiosResponse } from "axios";
 
 const Login = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<LoginUser>();
   const [loading, setLoading] = useState(false);
 
-  const onSubmit: SubmitHandler<LoginUser> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<LoginUser> = async (data) => {
+    try {
+      setLoading(true);
+      const response: AxiosResponse = await axios.post(
+        "http://localhost:5000/api/v1/auth/login",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log(response);
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      toast.success(response.data.message);
+    } catch (error) {
+      console.error("Registration failed:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className={`pb-10 ${darkMode ? "bg-black" : ""}`}>
@@ -83,7 +109,7 @@ const Login = () => {
 
           <div>
             {loading ? (
-              <button className="btn  bg-primary hover:bg-brand duration-500 w-full mt-5 border-none">
+              <button className="btn py-3 rounded-lg bg-primary hover:bg-brand duration-500 w-full mt-5 border-none">
                 <Spinner />
               </button>
             ) : (

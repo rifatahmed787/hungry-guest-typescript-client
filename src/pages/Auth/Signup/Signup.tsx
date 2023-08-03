@@ -1,23 +1,28 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-misused-promises */
+
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Register } from "../../../types/types";
 import { useContext, useState } from "react";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 import Spinner from "../../../components/Spinner/Spinner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast/headless";
+import { AxiosResponse } from "axios";
 
 const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<Register>();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<Register> = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post(
+      const response: AxiosResponse = await axios.post(
         "http://localhost:5000/api/v1/auth/register",
         data,
         {
@@ -26,13 +31,13 @@ const Signup = () => {
           },
         }
       );
-      console.log("Registration successful:", response?.data);
-      // Handle success...
+
+      if (response.data.success) {
+        toast.success(response.data.message);
+        navigate("/login");
+      }
     } catch (error) {
       console.error("Registration failed:", error);
-      // Display an error message or notification to the user
-      // For example:
-      // setErrorMsg("Failed to register. Please try again later.");
     } finally {
       setLoading(false);
     }
