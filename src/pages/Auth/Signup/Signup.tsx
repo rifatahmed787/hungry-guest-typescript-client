@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Register } from "../../../types/types";
@@ -17,14 +18,51 @@ const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<Register>();
   const [loading, setLoading] = useState(false);
+  const [file, setFile] = useState<File | undefined>();
   const navigate = useNavigate();
+
+  const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFile(e.target.files[0]);
+    } else {
+      setFile(undefined);
+    }
+  };
 
   const onSubmit: SubmitHandler<Register> = async (data) => {
     try {
       setLoading(true);
+
+      // Upload image to the server
+      let imageUrl = "";
+      if (file) {
+        const formData = new FormData();
+        formData.append("image", file);
+
+        const uploadResponse = await axios.post(
+          "http://localhost:5000/api/v1/upload/imageupload",
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        imageUrl = uploadResponse.data.url;
+      }
+
+      // Register user with the image URL
+      const userData = {
+        userName: data.userName,
+        email: data.email,
+        password: data.password,
+        imageUrl,
+      };
+
       const response: AxiosResponse = await axios.post(
         "http://localhost:5000/api/v1/auth/register",
-        data,
+        userData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -62,18 +100,23 @@ const Signup = () => {
         <h2 className="text-2xl font-bold text-orange-500 text-center ">
           Sign up
         </h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="py-5">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="py-5"
+          encType="multipart/form-data"
+          method="post"
+        >
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="file"
-              id="floating_first_name"
+              id="floating_image"
+              onChange={onSelectFile}
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2"
               placeholder=" "
-              {...register("image")}
               required
             />
             <label
-              htmlFor="floating_first_name"
+              htmlFor="floating_image"
               className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
                 darkMode
                   ? "bg-gradient-backdrop text-white peer-focus:text-white"
@@ -87,7 +130,7 @@ const Signup = () => {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              id="floating_last_name"
+              id="floating_name"
               className={`block py-2.5 px-0 w-full text-sm  bg-transparent  border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
                 darkMode ? "text-white" : "text-gray-900"
               }`}
@@ -96,7 +139,7 @@ const Signup = () => {
               required
             />
             <label
-              htmlFor="floating_first_name"
+              htmlFor="floating_name"
               className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
                 darkMode
                   ? "bg-gradient-backdrop text-white peer-focus:text-white"

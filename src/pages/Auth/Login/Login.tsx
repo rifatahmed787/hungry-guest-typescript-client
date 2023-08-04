@@ -122,7 +122,7 @@ const Login = () => {
           </div>
         </form>
         <p className={`mt-3 text-center ${darkMode ? "text-white" : ""}`}>
-          Already have an account Please{" "}
+          Don't have an account Please{" "}
           <Link className="text-primary  link hover:text-brand" to="/signup">
             Signup
           </Link>
