@@ -23,11 +23,13 @@ const Signup = () => {
 
   const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
+      console.log(e.target.files[0]);
       setFile(e.target.files[0]);
     } else {
       setFile(undefined);
     }
   };
+  console.log(file);
 
   const onSubmit: SubmitHandler<Register> = async (data) => {
     try {
@@ -37,19 +39,23 @@ const Signup = () => {
       let imageUrl = "";
       if (file) {
         const formData = new FormData();
+        console.log(file);
         formData.append("image", file);
+        // Log the contents of the FormData
+        console.log(Object.fromEntries(formData.entries()));
 
         const uploadResponse = await axios.post(
           "http://localhost:5000/api/v1/upload/imageupload",
           formData,
           {
             headers: {
-              "Content-Type": "application/json",
+              "Content-Type": "multipart/form-data",
             },
           }
         );
 
         imageUrl = uploadResponse.data.url;
+        console.log(imageUrl);
       }
 
       // Register user with the image URL
@@ -111,6 +117,7 @@ const Signup = () => {
               type="file"
               id="floating_image"
               onChange={onSelectFile}
+              name="image"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent  border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2"
               placeholder=" "
               required

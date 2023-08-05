@@ -41,3 +41,13 @@ export type LoginUser = {
   email: string;
   password: string;
 };
+
+//booking table
+export type BookingTable = {
+  email: string;
+  date: string;
+  time: string;
+  name: string;
+  people: string;
+  phone: string;
+};

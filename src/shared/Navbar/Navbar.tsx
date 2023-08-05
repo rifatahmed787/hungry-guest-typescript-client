@@ -758,7 +758,7 @@ const Navbar = () => {
               isMenuOpen
                 ? "dropdown-menu-small"
                 : "-translate-x-full duration-300"
-            }`}
+            } ${darkMode ? "bg-gradient-backdrop text-white" : ""}`}
           >
             <div className=" shadow-sm text-brand hover:text-primary">
               <nav className="">

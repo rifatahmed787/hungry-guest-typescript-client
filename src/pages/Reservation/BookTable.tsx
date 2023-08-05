@@ -1,27 +1,21 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import image from "../../assets/homeCardImg/cardd2.jpeg";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
 import servicebanner from "../../assets/homeCardImg/home (5).jpeg";
 import { DarkModeContext } from "../../components/DarkModeContext/DarkModeContext";
+import { BookingTable } from "../../types/types";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 const BookTable = () => {
   const { darkMode } = useContext(DarkModeContext);
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [name, setName] = useState("");
-  const [numberOfPeople, setNumberOfPeople] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const { register, handleSubmit } = useForm<BookingTable>();
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    // Handle form submission here
-  };
+  const onSubmit: SubmitHandler<BookingTable> = (data) => console.log(data);
 
   return (
-    <div className={`pb-10 ${darkMode ? "bg-black" : ""}`}>
+    <div className={`pb-10 min-h-screen ${darkMode ? "bg-black" : ""}`}>
       {/* banner part */}
       <div className="mb-10">
         <img
@@ -59,111 +53,162 @@ const BookTable = () => {
           </div>
 
           {/* form */}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-9">
             <h1 className="text-3xl lg:text-5xl font-display1 text-brand font-bold mb-4 error">
               Make a Booking
             </h1>
-            <div className="grid grid-cols-2 gap-5">
-              <div className="mb-4">
-                <label htmlFor="date" className="block mb-2 font-medium">
-                  Date
-                </label>
+            <div className="grid grid-cols-2 gap-x-5 mt-10">
+              <div className="relative z-0 w-full mb-6 group">
                 <input
                   type="date"
-                  id="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
-                    darkMode ? "bg-gray-500" : ""
+                  id="floating_date"
+                  className={`block py-2.5 px-0 w-full text-sm border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
+                    darkMode
+                      ? "text-white bg-gray-600"
+                      : "text-black bg-transparent"
                   }`}
+                  placeholder=" "
+                  {...register("date")}
                   required
                 />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="time" className="block mb-2 font-medium">
-                  Time
+                <label
+                  htmlFor="floating_date"
+                  className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
+                    darkMode
+                      ? "bg-gradient-backdrop text-white peer-focus:text-white"
+                      : "bg-[#F3F4F6]"
+                  }`}
+                >
+                  Date
                 </label>
+              </div>
+
+              <div className="relative z-0 w-full mb-6 group">
                 <input
                   type="time"
-                  id="time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                  className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
-                    darkMode ? "bg-gray-500" : ""
+                  id="floating_time"
+                  className={`block py-2.5 px-0 w-full text-sm border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
+                    darkMode
+                      ? "text-white bg-gray-600"
+                      : "text-black bg-transparent"
                   }`}
+                  placeholder=" "
+                  {...register("time")}
                   required
                 />
+                <label
+                  htmlFor="floating_time"
+                  className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
+                    darkMode
+                      ? "bg-gradient-backdrop text-white peer-focus:text-white"
+                      : "bg-[#F3F4F6]"
+                  }`}
+                >
+                  Time
+                </label>
               </div>
             </div>
-            <div className="mb-4">
-              <label htmlFor="name" className="block mb-2 font-medium">
-                Name
-              </label>
+
+            <div className="relative z-0 w-full mb-6 group">
               <input
                 type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
-                  darkMode ? "bg-gray-500" : ""
+                id="floating_name"
+                className={`block py-2.5 px-0 w-full text-sm border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
+                  darkMode
+                    ? "text-white bg-gray-600"
+                    : "text-black bg-transparent"
                 }`}
+                placeholder=" "
+                {...register("name")}
                 required
               />
+              <label
+                htmlFor="floating_name"
+                className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
+                  darkMode
+                    ? "bg-gradient-backdrop text-white peer-focus:text-white"
+                    : "bg-[#F3F4F6]"
+                }`}
+              >
+                Name
+              </label>
             </div>
 
-            <div className="mb-4">
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="text"
+                id="floating_people"
+                className={`block py-2.5 px-0 w-full text-sm border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
+                  darkMode
+                    ? "text-white bg-gray-600"
+                    : "text-black bg-transparent"
+                }`}
+                placeholder=" "
+                {...register("people")}
+                required
+              />
               <label
-                htmlFor="numberOfPeople"
-                className="block mb-2 font-medium"
+                htmlFor="floating_people"
+                className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
+                  darkMode
+                    ? "bg-gradient-backdrop text-white peer-focus:text-white"
+                    : "bg-[#F3F4F6]"
+                }`}
               >
                 Number of People
               </label>
-              <select
-                id="numberOfPeople"
-                value={numberOfPeople}
-                onChange={(e) => setNumberOfPeople(e.target.value)}
-                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
-                  darkMode ? "bg-gray-500" : ""
-                }`}
-                required
-              >
-                <option value="">Select Number of People</option>
-                <option value="1">1 Person</option>
-                <option value="2">2 People</option>
-                <option value="3">3 People</option>
-                <option value="4">4 People</option>
-              </select>
             </div>
-            <div className="mb-4">
-              <label htmlFor="phone" className="block mb-2 font-medium">
-                Phone
-              </label>
+
+            <div className="relative z-0 w-full mb-6 group">
               <input
-                type="tel"
-                id="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
-                  darkMode ? "bg-gray-500" : ""
+                type="phone"
+                id="floating_phone"
+                className={`block py-2.5 px-0 w-full text-sm border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
+                  darkMode
+                    ? "text-white bg-gray-600"
+                    : "text-black bg-transparent"
                 }`}
+                placeholder=" "
+                {...register("phone")}
                 required
               />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block mb-2 font-medium">
-                Email
+              <label
+                htmlFor="floating_phone"
+                className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
+                  darkMode
+                    ? "bg-gradient-backdrop text-white peer-focus:text-white"
+                    : "bg-[#F3F4F6]"
+                }`}
+              >
+                Phone Number
               </label>
+            </div>
+
+            <div className="relative z-0 w-full mb-6 group">
               <input
                 type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={`w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-primary focus:border-primary ${
-                  darkMode ? "bg-gray-500" : ""
+                id="floating_email"
+                className={`block py-2.5 px-0 w-full text-sm border-2 border-primary appearance-none rounded-md focus:outline-none focus:ring-0 focus:border-brand peer focus:border-t-1 pl-2 ${
+                  darkMode
+                    ? "text-white bg-gray-600"
+                    : "text-black bg-transparent"
                 }`}
+                placeholder=" "
+                {...register("email")}
                 required
               />
+              <label
+                htmlFor="floating_email"
+                className={`peer-focus:font-medium absolute  text-sm text-gray-500  duration-300 transform -translate-y-[22px] scale-75 top-3  origin-[0] peer-focus:left-0 peer-focus:text-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-[22px] ml-2  peer-focus:absolute peer-focus:z-10 px-2  ${
+                  darkMode
+                    ? "bg-gradient-backdrop text-white peer-focus:text-white"
+                    : "bg-[#F3F4F6]"
+                }`}
+              >
+                Email
+              </label>
             </div>
+
             <button
               type="submit"
               className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-2.5 mt-3 px-4 rounded"
