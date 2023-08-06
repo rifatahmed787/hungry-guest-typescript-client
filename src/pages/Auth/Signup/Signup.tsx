@@ -11,7 +11,7 @@ import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeCon
 import Spinner from "../../../components/Spinner/Spinner";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-hot-toast/headless";
+import { toast } from "react-hot-toast";
 import { AxiosResponse } from "axios";
 
 const Signup = () => {
@@ -81,8 +81,13 @@ const Signup = () => {
       );
 
       if (response.data.success) {
+        console.log(response.data.message);
         toast.success(response.data.message);
         navigate("/login");
+      }
+      if (response.data.error) {
+        console.log(response.data.error);
+        toast.error(response.data.error);
       }
     } catch (error) {
       console.error("Registration failed:", error);

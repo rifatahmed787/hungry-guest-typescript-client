@@ -1,16 +1,35 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState, useContext } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
-
+import Cookies from "js-cookie";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Spinner from "../../../components/Spinner/Spinner";
 import { Link } from "react-router-dom";
 import { LoginUser } from "../../../types/types";
 import axios from "axios";
-import { toast } from "react-hot-toast/headless";
+import { toast } from "react-hot-toast";
 import { AxiosResponse } from "axios";
+
+// type
+interface UserData {
+  // Define the structure of the user data here
+  id: number;
+  userName: string;
+  email: string;
+  imageUrl: string;
+  // ... other properties
+}
+
+interface LoginResponseData {
+  accessToken: string;
+  refreshToken: string;
+  user: UserData;
+}
 
 const Login = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -30,7 +49,13 @@ const Login = () => {
         }
       );
 
-      console.log(response);
+      console.log("Response:", response);
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      const { accessToken }: LoginResponseData = response.data.data;
+
+      // Set user data and access token in cookies
+      Cookies.set("accessToken", accessToken);
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       toast.success(response.data.message);
@@ -53,7 +78,7 @@ const Login = () => {
         </div>
       </div>
       <div
-        className={`small-width   p-7 my-16 shadow-2xl border border-orange-400 rounded-xl  mx-auto lg:w-1/3 md:w-2/5 sm:w-11/12 ${
+        className={`small-width mx-5  p-7 my-16 shadow-2xl border border-orange-400 rounded-xl  md:mx-auto lg:w-1/3 md:w-2/5 sm:w-11/12 ${
           darkMode ? "bg-gradient-backdrop" : "bg-[#F3F4F6]"
         }`}
       >
