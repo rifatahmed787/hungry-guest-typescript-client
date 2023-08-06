@@ -5,7 +5,7 @@
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Register } from "../../../types/types";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
 import Spinner from "../../../components/Spinner/Spinner";
@@ -29,7 +29,9 @@ const Signup = () => {
       setFile(undefined);
     }
   };
-  console.log(file);
+  useEffect(() => {
+    console.log(file);
+  }, [file]);
 
   const onSubmit: SubmitHandler<Register> = async (data) => {
     try {
@@ -54,7 +56,9 @@ const Signup = () => {
           }
         );
 
-        imageUrl = uploadResponse.data.url;
+        console.log(uploadResponse.data);
+
+        imageUrl = uploadResponse.data.images[0];
         console.log(imageUrl);
       }
 
