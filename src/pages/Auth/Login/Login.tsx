@@ -5,62 +5,36 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState, useContext } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
-import Cookies from "js-cookie";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Spinner from "../../../components/Spinner/Spinner";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import axios from "axios";
 import { toast } from "react-hot-toast";
-import { AxiosResponse } from "axios";
-import { LoginUser } from "../../../types/auth.types";
 
-// type
-interface UserData {
-  id: number;
-  userName: string;
-  email: string;
-  imageUrl: string;
-}
-
-interface LoginResponseData {
-  accessToken: string;
-  refreshToken: string;
-  user: UserData;
-}
+import { ILoginArgs } from "../../../types/auth.types";
+import { useUserLoginMutation } from "../../../redux/features/auth/authApi";
 
 const Login = () => {
   const { darkMode } = useContext(DarkModeContext);
-  const { register, handleSubmit } = useForm<LoginUser>();
+  const { register, handleSubmit } = useForm<ILoginArgs>();
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [loginUser] = useUserLoginMutation();
 
-  const onSubmit: SubmitHandler<LoginUser> = async (data) => {
+  const onSubmit: SubmitHandler<ILoginArgs> = async (data) => {
     try {
       setLoading(true);
-      const response: AxiosResponse = await axios.post(
-        "http://localhost:5000/api/v1/auth/login",
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
 
-      console.log("Response:", response);
+      // Register user with the image URL
+      const userData = {
+        email: data.email,
+        password: data.password,
+      };
+      const response = await loginUser(userData).unwrap();
+      console.log(response);
 
-      const { accessToken, refreshToken }: LoginResponseData =
-        response.data.data;
-
-      // Set user data and access token in cookies
-      Cookies.set("accessToken", accessToken);
-      Cookies.set("refreshToken", refreshToken);
-
-      if (response.data.success) {
-        toast.success(response.data.message);
-        navigate("/");
+      if (response) {
+        toast.success(response?.message);
       }
     } catch (error) {
       console.error("Registration failed:", error);

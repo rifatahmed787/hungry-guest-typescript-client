@@ -21,7 +21,7 @@ const Signup = () => {
   const { register, handleSubmit } = useForm<IRegister>();
 
   const [file, setFile] = useState<File | undefined>();
-  const [registerUser, { isLoading }] = useUserRegisterMutation();
+  const [registerUser] = useUserRegisterMutation();
   const navigate = useNavigate();
 
   const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,7 +75,7 @@ const Signup = () => {
       const response = await registerUser(userData).unwrap();
 
       if (response) {
-        toast.success("User successfully registered!");
+        toast.success(response?.message);
         navigate("/login");
       }
       if (response.data?.error) {

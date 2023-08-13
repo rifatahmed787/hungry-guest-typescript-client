@@ -1,13 +1,5 @@
 import { GenderEnum } from "./enum/enum";
 
-// user register types
-export interface IRegister {
-  userName: string;
-  gender?: GenderEnum;
-  email: string;
-  password: string;
-}
-
 export interface IUser {
   _id?: string;
   email?: string;
@@ -17,6 +9,25 @@ export interface IUser {
   avatar?: string;
   phoneNumber?: string;
   location?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+//auth slice types
+export interface IAuthState {
+  isLoggedIn: boolean;
+  user: IUser | null;
+  accessToken: string | null;
+  refreshToken: string | null;
+}
+
+/*auth register type*/
+// user register types
+export interface IRegister {
+  userName: string;
+  gender?: GenderEnum;
+  email: string;
+  password: string;
 }
 
 export interface IRegisterData {
@@ -28,12 +39,33 @@ export interface IRegisterData {
 }
 export interface IRegisterRes {
   status?: boolean;
-  message?: string;
+  message: string;
   data?: IRegisterData;
+  refreshToken?: string | null;
 }
 
-//user login types
-export interface LoginUser {
+/* login api start */
+export interface ILoginArgs {
   email: string;
   password: string;
+}
+
+export interface ILoginData {
+  user?: IUser | null;
+  accessToken?: string | null;
+  refreshToken?: string | null;
+}
+
+export interface ILoginRes {
+  message: string;
+  data?: ILoginData;
+}
+
+export interface ILoginAction {
+  type: string;
+  payload: {
+    user: IUser;
+    accessToken: string;
+    refreshToken: string;
+  };
 }

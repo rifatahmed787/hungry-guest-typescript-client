@@ -1,5 +1,12 @@
-import { IRegister, IRegisterRes } from "../../../types/auth.types";
+import {
+  ILoginArgs,
+  ILoginRes,
+  IRegister,
+  IRegisterRes,
+} from "../../../types/auth.types";
 import { apiSlice } from "../../api/apiSlice";
+import { login } from "./authSlice";
+import Cookies from "js-cookie";
 
 export const authApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -11,34 +18,51 @@ export const authApi = apiSlice.injectEndpoints({
       }),
     }),
 
-    //   userLogin: builder.mutation<ILoginRes, ILoginArgs>({
-    //     query: (data) => ({
-    //       url: "/auth/login",
-    //       method: "POST",
-    //       body: data,
-    //     }),
-    //     async onQueryStarted(loginArgs, { dispatch, queryFulfilled }) {
-    //       try {
-    //         const loginRes = await queryFulfilled;
-    //         if (loginRes) {
-    //           dispatch(
-    //             login({
-    //               user: loginRes?.data?.data?.user,
-    //               accessToken: loginRes?.data?.data?.accessToken,
-    //               refreshToken: loginRes?.data?.data?.refreshToken,
-    //             })
-    //           );
-    //           dispatch(
-    //             setCurrentModal({
-    //               name: "login",
-    //             })
-    //           );
-    //           Cookies.set("token", loginRes?.data?.data?.accessToken ?? "");
-    //           redirect("/user/home");
-    //         }
-    //       } catch {}
-    //     },
-    //   }),
+    userLogin: builder.mutation<ILoginRes, ILoginArgs>({
+      query: (data) => ({
+        url: "/auth/login",
+        method: "POST",
+        body: data,
+      }),
+      async onQueryStarted(loginArgs, { dispatch, queryFulfilled }) {
+        try {
+          const loginRes = await queryFulfilled;
+          console.log(loginRes);
+
+          if (loginRes) {
+            dispatch(
+              login({
+                isLoggedIn: true,
+                user: loginRes?.data?.data?.user || null,
+                accessToken: loginRes?.data?.data?.accessToken || null,
+                refreshToken: loginRes?.data?.data?.refreshToken || null,
+              })
+            );
+
+            console.log("the token is: ", loginRes?.data?.data?.user);
+            /*to get the isLoggedIn as boolean */
+            // const userCookie = Cookies.get("user");
+            // const parsedUserCookie = JSON.parse(userCookie);
+
+            // const user = parsedUserCookie.user;
+            // const isLoggedIn = parsedUserCookie.isLoggedIn;
+
+            Cookies.set(
+              "user",
+              JSON.stringify({
+                user: loginRes?.data?.data?.user,
+                isLoggedIn: true,
+              })
+            );
+
+            Cookies.set("token", loginRes?.data?.data?.accessToken ?? "");
+          }
+        } catch {
+          //do nothing
+          console.log({ loginArgs });
+        }
+      },
+    }),
 
     //   userLogOut: builder.mutation<any, void>({
     //     query: (data) => ({
@@ -91,7 +115,7 @@ export const authApi = apiSlice.injectEndpoints({
 });
 
 export const {
-  // useUserLoginMutation,
+  useUserLoginMutation,
   useUserRegisterMutation,
   // useUserResetPassMutation,
   // useUserLogOutMutation,

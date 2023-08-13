@@ -1,9 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
-import { IAuthState } from "./authSlice.type";
+
 import { RootState } from "../../store";
+import { IAuthState } from "../../../types/auth.types";
 
 const initialState: IAuthState = {
+  isLoggedIn: false,
   user: null,
   accessToken: null,
   refreshToken: null,
@@ -15,6 +17,7 @@ const authSlice = createSlice({
   reducers: {
     login(state, action: PayloadAction<IAuthState>) {
       // Cookies.set("token", action.payload.accessToken);
+      state.isLoggedIn = action.payload.isLoggedIn;
       state.user = action.payload.user;
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
@@ -22,6 +25,7 @@ const authSlice = createSlice({
 
     logout(state) {
       Cookies.remove("token");
+      state.isLoggedIn = false;
       state.user = null;
       state.accessToken = null;
       state.refreshToken = null;
