@@ -143,7 +143,7 @@ const Navbar = () => {
 
         {pagesDropdownOpen && (
           <ul
-            className={`dropdown-menu  py-4 mt-7 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
+            className={`dropdown-menu border-t-2 border-primary py-4 mt-7 absolute   block z-50 duration-300 ease-in-out divide-y-2 ${
               darkMode ? "bg-gradient-backdrop" : "bg-white"
             }`}
           >
@@ -223,7 +223,7 @@ const Navbar = () => {
 
               {servicesDropdownOpen && (
                 <ul
-                  className={`dropdown-menu  py-4 absolute -right-28  lg:-right-44  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
+                  className={`dropdown-menu border-t-2 border-primary py-4 absolute -right-28  lg:-right-44  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
                     darkMode ? "bg-gradient-backdrop" : "bg-white "
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -299,7 +299,7 @@ const Navbar = () => {
 
               {shopDropdownOpen && (
                 <ul
-                  className={`dropdown-menu  py-4 absolute -right-28 lg:-right-44  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
+                  className={`dropdown-menu border-t-2 border-primary py-4 absolute -right-28 lg:-right-44  z-50 shadow-lg duration-300 ease-in-out divide-y-2 ${
                     darkMode ? "bg-gradient-backdrop" : "bg-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -395,7 +395,7 @@ const Navbar = () => {
 
         {menuDropdownOpen && (
           <ul
-            className={`dropdown-menu md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll mt-7 ${
+            className={`dropdown-menu border-t-2 border-primary md:grid grid-cols-6 w-11/12 lg:w-3/4 absolute lg:left-[12%]  z-50 duration-300 group-hover:translate-y-1 ease-in-out overflow-y-scroll mt-7 ${
               darkMode
                 ? "bg-gradient-backdrop text-white"
                 : "bg-white text-primary"
@@ -454,7 +454,7 @@ const Navbar = () => {
 
         {blogDropdownOpen && (
           <ul
-            className={`dropdown-menu  py-4 mt-7 absolute block z-50 duration-300 ease-in-out divide-y-2 ${
+            className={`dropdown-menu border-t-2 border-primary  py-4 mt-7 absolute block z-50 duration-300 ease-in-out divide-y-2 ${
               darkMode ? "bg-gradient-backdrop" : "bg-white"
             }`}
           >

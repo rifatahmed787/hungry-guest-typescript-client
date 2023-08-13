@@ -9,20 +9,19 @@ import Cookies from "js-cookie";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Spinner from "../../../components/Spinner/Spinner";
-import { Link } from "react-router-dom";
-import { LoginUser } from "../../../types/types";
+import { Link, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { AxiosResponse } from "axios";
+import { LoginUser } from "../../../types/auth.types";
 
 // type
 interface UserData {
-  // Define the structure of the user data here
   id: number;
   userName: string;
   email: string;
   imageUrl: string;
-  // ... other properties
 }
 
 interface LoginResponseData {
@@ -35,6 +34,7 @@ const Login = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<LoginUser>();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<LoginUser> = async (data) => {
     try {
@@ -51,14 +51,17 @@ const Login = () => {
 
       console.log("Response:", response);
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const { accessToken }: LoginResponseData = response.data.data;
+      const { accessToken, refreshToken }: LoginResponseData =
+        response.data.data;
 
       // Set user data and access token in cookies
       Cookies.set("accessToken", accessToken);
+      Cookies.set("refreshToken", refreshToken);
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      toast.success(response.data.message);
+      if (response.data.success) {
+        toast.success(response.data.message);
+        navigate("/");
+      }
     } catch (error) {
       console.error("Registration failed:", error);
     } finally {

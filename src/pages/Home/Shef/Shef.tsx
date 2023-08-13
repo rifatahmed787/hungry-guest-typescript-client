@@ -82,7 +82,7 @@ const Shef = () => {
           </div>
         </div>
         <div className="relative before:absolute before:content-normal before:bg-primary before:w-4/6 before:h-1.5 before:bottom-0 before:z-10">
-          <img src={chef} alt="" className="" />
+          <img src={chef} alt="" className="h-[425px]" />
           <span className="inset-0 absolute bg-gradient-to-b from-yellow-400 to-green-400 top-0 left-0 opacity-40 hover:opacity-0 duration-300"></span>
         </div>
       </div>

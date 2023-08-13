@@ -4,7 +4,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Register } from "../../../types/types";
 import { useContext, useState, useEffect } from "react";
 import signup from "../../../assets/sectionBanner/signup.jpeg";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
@@ -12,13 +11,17 @@ import Spinner from "../../../components/Spinner/Spinner";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { AxiosResponse } from "axios";
+
+import { IRegister } from "../../../types/auth.types";
+import { useUserRegisterMutation } from "../../../redux/features/auth/authApi";
 
 const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
-  const { register, handleSubmit } = useForm<Register>();
   const [loading, setLoading] = useState(false);
+  const { register, handleSubmit } = useForm<IRegister>();
+
   const [file, setFile] = useState<File | undefined>();
+  const [registerUser, { isLoading }] = useUserRegisterMutation();
   const navigate = useNavigate();
 
   const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,10 +36,9 @@ const Signup = () => {
     console.log(file);
   }, [file]);
 
-  const onSubmit: SubmitHandler<Register> = async (data) => {
+  const onSubmit: SubmitHandler<IRegister> = async (data) => {
     try {
       setLoading(true);
-
       // Upload image to the server
       let imageUrl = "";
       if (file) {
@@ -70,22 +72,13 @@ const Signup = () => {
         imageUrl,
       };
 
-      const response: AxiosResponse = await axios.post(
-        "http://localhost:5000/api/v1/auth/register",
-        userData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await registerUser(userData).unwrap();
 
-      if (response.data.success) {
-        console.log(response.data.message);
-        toast.success(response.data.message);
+      if (response) {
+        toast.success("User successfully registered!");
         navigate("/login");
       }
-      if (response.data.error) {
+      if (response.data?.error) {
         console.log(response.data.error);
         toast.error(response.data.error);
       }
