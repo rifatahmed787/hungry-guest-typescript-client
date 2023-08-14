@@ -13,6 +13,8 @@ import CheckOutPage from "../pages/ServicesPages/Shop/ChackOut/CheckOutPage";
 import Cart from "../pages/ServicesPages/Shop/ShoppingCart/Cart";
 import Signup from "../pages/Auth/Signup/Signup";
 import Login from "../pages/Auth/Login/Login";
+import AuthRoute from "./authRoute";
+import PrivateRoute from "./privateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -50,11 +52,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "cartpage",
-        element: <Cart />,
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/checkout",
-        element: <CheckOutPage />,
+        element: (
+          <PrivateRoute>
+            <CheckOutPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact",
@@ -62,11 +72,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <Signup />,
+        element: (
+          <AuthRoute>
+            <Signup />
+          </AuthRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <AuthRoute>
+            <Login />
+          </AuthRoute>
+        ),
       },
     ],
   },

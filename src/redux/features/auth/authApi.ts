@@ -33,24 +33,16 @@ export const authApi = apiSlice.injectEndpoints({
             dispatch(
               login({
                 isLoggedIn: true,
-                user: loginRes?.data?.data?.user || null,
+                user: loginRes?.data?.data?.email || null,
                 accessToken: loginRes?.data?.data?.accessToken || null,
                 refreshToken: loginRes?.data?.data?.refreshToken || null,
               })
             );
 
-            console.log("the token is: ", loginRes?.data?.data?.user);
-            /*to get the isLoggedIn as boolean */
-            // const userCookie = Cookies.get("user");
-            // const parsedUserCookie = JSON.parse(userCookie);
-
-            // const user = parsedUserCookie.user;
-            // const isLoggedIn = parsedUserCookie.isLoggedIn;
-
             Cookies.set(
               "user",
               JSON.stringify({
-                user: loginRes?.data?.data?.user,
+                user: loginRes?.data?.data?.email,
                 isLoggedIn: true,
               })
             );

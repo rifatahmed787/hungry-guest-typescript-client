@@ -16,7 +16,7 @@ export interface IUser {
 //auth slice types
 export interface IAuthState {
   isLoggedIn: boolean;
-  user: IUser | null;
+  user: string | null;
   accessToken: string | null;
   refreshToken: string | null;
 }
@@ -51,7 +51,7 @@ export interface ILoginArgs {
 }
 
 export interface ILoginData {
-  user?: IUser | null;
+  email?: string | null;
   accessToken?: string | null;
   refreshToken?: string | null;
 }
