@@ -12,9 +12,11 @@ import SideBar from "./Sidebar";
 import BrandButton_2 from "../../components/BrandButton/BrandButton_2";
 import BrandButton from "../../components/BrandButton/BrandButton";
 import HomeMenuItem from "./HomeMenuItem/HomeMenuItem";
+import { useAppSelector } from "../../hooks/reduxHooks";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const auth = useAppSelector((state) => state.auth);
   const location = useLocation();
 
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
@@ -625,28 +627,50 @@ const Navbar = () => {
         )}
       </li>
 
-      {/*.............. cart button  ..............selection:*/}
-      <li
-        className={`font-bold ${
-          scrolled
-            ? `${
-                darkMode
-                  ? "text-white hover:text-brand"
-                  : "hover:text-primary  text-brand"
-              }`
-            : "text-regular hover:text-primary"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      >
-        <Link to="/">
-          <button type="button" className="mt-2">
-            <Icon icon="mdi:cart-outline" width="25" />
-          </button>
-        </Link>
-      </li>
-
-      {/* hamburger button  */}
-      <SideBar />
+      {/* ........ if auth exist ............. */}
+      {auth?.isLoggedIn && auth?.user ? (
+        <>
+          {" "}
+          {/*.............. cart button  ..............selection:*/}
+          <li
+            className={`font-bold ${
+              scrolled
+                ? `${
+                    darkMode
+                      ? "text-white hover:text-brand"
+                      : "hover:text-primary  text-brand"
+                  }`
+                : "text-regular hover:text-primary"
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Link to="/">
+              <button type="button" className="mt-2">
+                <Icon icon="mdi:cart-outline" width="25" />
+              </button>
+            </Link>
+          </li>
+          {/* hamburger button  */}
+          <SideBar />
+        </>
+      ) : (
+        <>
+          <Link
+            to="/login"
+            className={`font-bold ${
+              scrolled
+                ? `${
+                    darkMode
+                      ? "text-white hover:text-brand"
+                      : "hover:text-primary  text-brand"
+                  }`
+                : "text-regular hover:text-primary"
+            }`}
+          >
+            Login
+          </Link>
+        </>
+      )}
     </>
   );
 
@@ -679,14 +703,30 @@ const Navbar = () => {
           </ul>
           <ul className=" items-center hidden lg:flex">
             <li className="pr-10">
-              {scrolled ? (
-                <Link to="/booktable">
-                  <BrandButton_2 text="Book Table" />
-                </Link>
+              {auth?.isLoggedIn && auth?.user ? (
+                <>
+                  {scrolled ? (
+                    <Link to="/booktable">
+                      <BrandButton_2 text="Book Table" />
+                    </Link>
+                  ) : (
+                    <Link to="/booktable">
+                      <BrandButton text="Book Table" />
+                    </Link>
+                  )}
+                </>
               ) : (
-                <Link to="/booktable">
-                  <BrandButton text="Book Table" />
-                </Link>
+                <>
+                  {scrolled ? (
+                    <Link to="/signup">
+                      <BrandButton_2 text="Register Now" />
+                    </Link>
+                  ) : (
+                    <Link to="/signup">
+                      <BrandButton text="Register Now" />
+                    </Link>
+                  )}
+                </>
               )}
             </li>
           </ul>

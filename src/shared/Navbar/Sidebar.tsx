@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -7,11 +8,19 @@ import { Icon } from "@iconify/react";
 import "./Navbar.css";
 import { DarkModeContext } from "../../components/DarkModeContext/DarkModeContext";
 import ToggleButton from "../../components/ToggleButton/ToggleButton";
+import { useUserLogOutMutation } from "../../redux/features/auth/authApi";
+import { logout } from "../../redux/features/auth/authSlice";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarTransitioning, setIsSidebarTransitioning] = useState(false);
   const { darkMode, isBangla, toggoleBangla } = useContext(DarkModeContext);
+  const [userLogOut] = useUserLogOutMutation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   //navbar color change effect
   const [scrolled, setScrolled] = useState(false);
@@ -158,7 +167,19 @@ const SideBar = () => {
             </label>
 
             <div className="flex justify-center">
-              <div
+              <button
+                onClick={async () => {
+                  try {
+                    await userLogOut().unwrap();
+                    dispatch(logout());
+                    if (Response) {
+                      toast.success("Logged out");
+                      navigate("/login");
+                    }
+                  } catch (error) {
+                    toast.error("Logout Failed");
+                  }
+                }}
                 className={`flex justify-center items-center gap-2 absolute bottom-10  hover:text-primary ${
                   darkMode ? "text-white" : "text-brand"
                 }`}
@@ -167,7 +188,7 @@ const SideBar = () => {
                 <h1 className="text-xl font-semibold cursor-pointer">
                   {isBangla ? "লগআউট" : "Logout"}
                 </h1>
-              </div>
+              </button>
             </div>
           </div>
         </div>

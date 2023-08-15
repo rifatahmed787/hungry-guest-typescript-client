@@ -56,13 +56,13 @@ export const authApi = apiSlice.injectEndpoints({
       },
     }),
 
-    //   userLogOut: builder.mutation<any, void>({
-    //     query: (data) => ({
-    //       url: "/auth/logout",
-    //       method: "POST",
-    //       body: data,
-    //     }),
-    //   }),
+    userLogOut: builder.mutation<unknown, void>({
+      query: (data) => ({
+        url: "/auth/logout",
+        method: "POST",
+        body: data,
+      }),
+    }),
 
     //   userResetPass: builder.mutation<IUserResetPassRes, IUserResetPassArgs>({
     //     query: (data) => ({
@@ -110,7 +110,7 @@ export const {
   useUserLoginMutation,
   useUserRegisterMutation,
   // useUserResetPassMutation,
-  // useUserLogOutMutation,
+  useUserLogOutMutation,
   // useUserPassWordChangeMutation,
   // useUserGetByIdQuery,
   // useGetUserDetailsQuery,

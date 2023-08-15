@@ -14,6 +14,7 @@ import { toast } from "react-hot-toast";
 
 import { IRegister } from "../../../types/auth.types";
 import { useUserRegisterMutation } from "../../../redux/features/auth/authApi";
+import TitleHook from "../../../hooks/TitleHook";
 
 const Signup = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -23,6 +24,8 @@ const Signup = () => {
   const [file, setFile] = useState<File | undefined>();
   const [registerUser] = useUserRegisterMutation();
   const navigate = useNavigate();
+
+  TitleHook("register");
 
   const onSelectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -49,7 +52,7 @@ const Signup = () => {
         console.log(Object.fromEntries(formData.entries()));
 
         const uploadResponse = await axios.post(
-          "http://localhost:5000/api/v1/upload/imageupload",
+          "https://hungry-guest-server.vercel.app/api/v1/upload/imageupload",
           formData,
           {
             headers: {

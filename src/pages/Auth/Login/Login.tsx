@@ -14,12 +14,14 @@ import { toast } from "react-hot-toast";
 
 import { ILoginArgs } from "../../../types/auth.types";
 import { useUserLoginMutation } from "../../../redux/features/auth/authApi";
+import TitleHook from "../../../hooks/TitleHook";
 
 const Login = () => {
   const { darkMode } = useContext(DarkModeContext);
   const { register, handleSubmit } = useForm<ILoginArgs>();
   const [loading, setLoading] = useState(false);
   const [loginUser] = useUserLoginMutation();
+  TitleHook("login");
 
   const onSubmit: SubmitHandler<ILoginArgs> = async (data) => {
     try {
