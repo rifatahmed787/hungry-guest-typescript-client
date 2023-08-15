@@ -8,12 +8,14 @@ import { Icon } from "@iconify/react";
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
 import { categories, serviceList } from "../../../../types/types";
+import TitleHook from "../../../../hooks/TitleHook";
 
 const ServiceList = () => {
   const [categories, setCategories] = useState<categories[]>([]);
   const { darkMode } = useContext(DarkModeContext);
 
   const [items, setItems] = useState<serviceList[]>([]);
+  TitleHook("service list");
 
   //fetching all the items
   useEffect(() => {

@@ -18,9 +18,11 @@ import { useContext } from "react";
 import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
 import { serviceGrid } from "../../../../types/types";
 import ServiceListCard from "./ServiceGridCard";
+import TitleHook from "../../../../hooks/TitleHook";
 
 const ServiceList = () => {
   const { darkMode } = useContext(DarkModeContext);
+  TitleHook("service grid");
 
   const FoodCards: serviceGrid[] = [
     {

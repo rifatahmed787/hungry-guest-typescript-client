@@ -7,9 +7,11 @@ import BrandButton from "../../../../components/BrandButton/BrandButton";
 import { useContext } from "react";
 import { DarkModeContext } from "../../../../components/DarkModeContext/DarkModeContext";
 import ServicesSingleTabs from "./ServicesSingleTabs";
+import TitleHook from "../../../../hooks/TitleHook";
 
 const ServiceSingle = () => {
   const { darkMode } = useContext(DarkModeContext);
+  TitleHook("service single");
 
   return (
     <div className={`pb-16  ${darkMode ? "bg-black text-white" : ""}`}>

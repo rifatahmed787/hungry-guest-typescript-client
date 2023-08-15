@@ -3,9 +3,11 @@ import { Icon } from "@iconify/react";
 import aboutBanner from "../../../assets/sectionBanner/about1.jpg";
 import { useContext } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
+import TitleHook from "../../../hooks/TitleHook";
 
 const About = () => {
   const { darkMode } = useContext(DarkModeContext);
+  TitleHook("about us");
   return (
     <div className={`pb-10 ${darkMode ? "bg-black text-white" : ""}`}>
       <div className="relative after:absolute after:content-normal after:bg-black after:opacity-30 after:h-full after:w-full after:top-0 after:left-0">

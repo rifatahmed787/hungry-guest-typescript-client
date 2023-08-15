@@ -5,10 +5,12 @@ import bannerimage from "../../../assets/homeCardImg/faq1.jpg";
 import { Icon } from "@iconify/react";
 import { useContext, useState } from "react";
 import { DarkModeContext } from "../../../components/DarkModeContext/DarkModeContext";
+import TitleHook from "../../../hooks/TitleHook";
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { darkMode } = useContext(DarkModeContext);
+  TitleHook("faq");
 
   const toggleAccordion = (index: number | null) => {
     setActiveIndex((prevIndex: number | null) =>
